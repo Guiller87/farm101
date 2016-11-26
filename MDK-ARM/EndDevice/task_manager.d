@@ -58,3 +58,4 @@ enddevice\task_manager.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/sem
 enddevice\task_manager.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 enddevice\task_manager.o: ..\Src\util_func.h
 enddevice\task_manager.o: ..\Src\water_pump.h
+enddevice\task_manager.o: ..\Src\water_flow.h

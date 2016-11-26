@@ -497,7 +497,7 @@ HAL_StatusTypeDef HAL_RTC_SetTime(RTC_HandleTypeDef *hrtc, RTC_TimeTypeDef *sTim
     hrtc->Instance->CR &= ((uint32_t)~RTC_CR_BCK);
 
     /* Configure the RTC_CR register */
-    hrtc->Instance->CR |= (uint32_t)(sTime->DayLightSaving | sTime->StoreOperation);
+    //hrtc->Instance->CR |= (uint32_t)(sTime->DayLightSaving | sTime->StoreOperation);
 
     /* Exit Initialization mode */
     hrtc->Instance->ISR &= ((uint32_t)~RTC_ISR_INIT);

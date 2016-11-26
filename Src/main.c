@@ -67,7 +67,6 @@ RTC_HandleTypeDef hrtc;
 SPI_HandleTypeDef hspi1;
 
 TIM_HandleTypeDef htim2;
-TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim4;
 
 UART_HandleTypeDef huart5;
@@ -83,8 +82,13 @@ RTC_TimeTypeDef time;
 RTC_DateTypeDef date;
 RTC_AlarmTypeDef first_alarm;
 
-
 uint8_t sys_stat = 0;
+uint32_t GARDEN_PUMP_FLOW_METER_count = 0;
+uint32_t AQUA_PUMP_FISH_TANK_FLOW_METER_count = 0;
+uint32_t AQUA_PUMP_TOWER_FLOW_METER_count = 0;
+
+uint8_t check_flow_meter_counter = 0;
+
 uint8_t debug_rx_buf[DEBUG_RX_BUF_SIZE] = {0};
 uint8_t xbee_rx_buff[XBEE_RX_BUF_SIZE] = {0};
 
@@ -105,7 +109,7 @@ QueueHandle_t xQueue_water_garden = NULL;
 TaskHandle_t debug_parse_data_rx_handle = NULL;
 TaskHandle_t manage_garden_handle = NULL;
 TaskHandle_t water_garden_handle = NULL;
-
+TaskHandle_t test_task_handle = NULL;
 
 
 QueueHandle_t xQueue_read_am2302 = NULL;
@@ -122,15 +126,14 @@ void SystemClock_Config(void);
 void Error_Handler(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
-//static void MX_ADC1_Init(void);
-//static void MX_TIM2_Init(void);
-//static void MX_TIM3_Init(void);
-//static void MX_ADC2_Init(void);
-//static void MX_SPI1_Init(void);
-//static void MX_TIM4_Init(void);
-//static void MX_UART5_Init(void);
-//static void MX_ADC3_Init(void);
-//static void MX_I2C3_Init(void);
+static void MX_ADC1_Init(void);
+static void MX_TIM2_Init(void);
+static void MX_ADC2_Init(void);
+static void MX_SPI1_Init(void);
+static void MX_TIM4_Init(void);
+static void MX_UART5_Init(void);
+static void MX_ADC3_Init(void);
+static void MX_I2C3_Init(void);
 void StartDefaultTask(void const * argument);
 
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
@@ -167,15 +170,14 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART2_UART_Init();
-  //MX_ADC1_Init();
-  //MX_TIM2_Init();
-  //MX_TIM3_Init();
-  //MX_ADC2_Init(); // have issue.. system hangs if uncommentted
-  //MX_SPI1_Init();
-  //MX_TIM4_Init();
-  //MX_UART5_Init();
-  //MX_ADC3_Init();
-  //MX_I2C3_Init();
+//  MX_ADC1_Init();
+  MX_TIM2_Init();
+//  MX_ADC2_Init();
+  MX_SPI1_Init();
+  MX_TIM4_Init();
+  MX_UART5_Init();
+//  MX_ADC3_Init();
+  MX_I2C3_Init();
 
   /* USER CODE BEGIN 2 */
 
@@ -197,6 +199,10 @@ int main(void)
 	//Enable RTC Alarm Interrupt
   HAL_NVIC_SetPriority(RTC_Alarm_IRQn,8, 1); 
   HAL_NVIC_EnableIRQ(RTC_Alarm_IRQn); 	
+
+  //Enable EXTI9_5_IRQn Interrupt for water flow meters
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn,8, 1); 
+  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn); 	
 
   /* USER CODE END 2 */
 
@@ -230,7 +236,7 @@ int main(void)
 	ret_val = xTaskCreate(debug_parse_data_rx, "debugtask", configMINIMAL_STACK_SIZE, &sys_stat, 1, &debug_parse_data_rx_handle); 
 	ret_val = xTaskCreate(manage_garden, "manage_garden", configMINIMAL_STACK_SIZE, &sys_stat, 1, &manage_garden_handle); 
 	ret_val = xTaskCreate(water_garden, "water_garden", configMINIMAL_STACK_SIZE, &sys_stat, 1, &water_garden_handle); 
-
+  //ret_val = xTaskCreate(test_task, "test", configMINIMAL_STACK_SIZE, &sys_stat, 1, &test_task_handle); 
 	  
   /* USER CODE END RTOS_THREADS */
 
@@ -529,9 +535,6 @@ static void MX_I2C3_Init(void)
 
 }
 
-/* RTC init function */
-
-
 /* SPI1 init function */
 static void MX_SPI1_Init(void)
 {
@@ -583,63 +586,6 @@ static void MX_TIM2_Init(void)
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
   if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-}
-
-/* TIM3 init function */
-static void MX_TIM3_Init(void)
-{
-
-  TIM_ClockConfigTypeDef sClockSourceConfig;
-  TIM_MasterConfigTypeDef sMasterConfig;
-  TIM_IC_InitTypeDef sConfigIC;
-
-  htim3.Instance = TIM3;
-  htim3.Init.Prescaler = 0;
-  htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 0;
-  htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
-  if (HAL_TIM_ConfigClockSource(&htim3, &sClockSourceConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  if (HAL_TIM_IC_Init(&htim3) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
-  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
-  sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
-  sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
-  sConfigIC.ICFilter = 0;
-  if (HAL_TIM_IC_ConfigChannel(&htim3, &sConfigIC, TIM_CHANNEL_1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  if (HAL_TIM_IC_ConfigChannel(&htim3, &sConfigIC, TIM_CHANNEL_2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  if (HAL_TIM_IC_ConfigChannel(&htim3, &sConfigIC, TIM_CHANNEL_3) != HAL_OK)
   {
     Error_Handler();
   }
@@ -772,6 +718,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
+  /*Configure GPIO pins : GARDEN_PUMP_FLOW_METER_Pin AQUA_PUMP_FISH_TANK_FLOW_METER_Pin AQUA_PUMP_TOWER_FLOW_METER_Pin */
+  GPIO_InitStruct.Pin = GARDEN_PUMP_FLOW_METER_Pin|AQUA_PUMP_FISH_TANK_FLOW_METER_Pin|AQUA_PUMP_TOWER_FLOW_METER_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
   /*Configure GPIO pin : AQUA_FISH_TANK_LEVEL_ECHO_Pin */
   GPIO_InitStruct.Pin = AQUA_FISH_TANK_LEVEL_ECHO_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
@@ -794,6 +746,10 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(AQUA_FISH_TANK_LEVEL_TRIG_GPIO_Port, AQUA_FISH_TANK_LEVEL_TRIG_Pin, GPIO_PIN_RESET);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
 
 }
 
@@ -835,6 +791,14 @@ int fputc(int ch, FILE *f) {
 void MX_RTC_Init(void)
 {
 
+	/* note:
+	     Configure the RTC_CR register 
+    //hrtc->Instance->CR |= (uint32_t)(sTime->DayLightSaving | sTime->StoreOperation);
+		//inside HAL_StatusTypeDef HAL_RTC_SetTime
+	
+	  //commented this code in the stm32l4xx_hal_rtc.c to fix HT issue writing unwanted 0x02
+	  //causing the hour alarm to be sometimes unreachable. since max is 24 hours
+	*/
   RTC_TimeTypeDef sTime;
   RTC_DateTypeDef sDate;
   RTC_AlarmTypeDef sAlarm;
@@ -856,12 +820,12 @@ void MX_RTC_Init(void)
 	
     /**Enable the Alarm B 
     */
-  sAlarm.AlarmDateWeekDay = 0x1;
-  sAlarm.Alarm = RTC_ALARM_B;
-  if (HAL_RTC_SetAlarm_IT(&hrtc, &sAlarm, RTC_FORMAT_BCD) != HAL_OK)
-  {
-    Error_Handler();
-  }	
+//  sAlarm.AlarmDateWeekDay = 0x1;
+//  sAlarm.Alarm = RTC_ALARM_B;
+//  if (HAL_RTC_SetAlarm_IT(&hrtc, &sAlarm, RTC_FORMAT_BIN) != HAL_OK)
+//  {
+//    Error_Handler();
+//  }	
 	
 }
 

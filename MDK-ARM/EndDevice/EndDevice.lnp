@@ -42,6 +42,7 @@
 "enddevice\aqua_tasks.o"
 "enddevice\util_func.o"
 "enddevice\task_manager.o"
+"enddevice\water_flow.o"
 "enddevice\garden_tasks.o"
 --library_type=microlib --strict --scatter "EndDevice\EndDevice.sct"
 --diag_suppress=L6329 --summary_stderr --info summarysizes --map --xref --callgraph --symbols

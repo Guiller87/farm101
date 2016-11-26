@@ -41,6 +41,10 @@
 #include "printf_mod.h"
 #include "main.h"
 
+extern uint8_t GARDEN_PUMP_FLOW_METER_count;
+extern uint8_t AQUA_PUMP_FISH_TANK_FLOW_METER_count;
+extern uint8_t AQUA_PUMP_TOWER_FLOW_METER_count;
+
 extern QueueHandle_t xQueue_debug_parse_data_rx;
 extern QueueHandle_t xQueue_rtc_alarm;
 extern QueueHandle_t xQueue_parse_xbee_rx;
@@ -99,6 +103,37 @@ void ADC1_2_IRQHandler(void)
   /* USER CODE BEGIN ADC1_2_IRQn 1 */
 
   /* USER CODE END ADC1_2_IRQn 1 */
+}
+
+/**
+* @brief This function handles EXTI line[9:5] interrupts.
+*/
+void EXTI9_5_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI9_5_IRQn 0 */
+	//GARDEN_PUMP_FLOW_METER_Pin is GPIO_PIN_6
+	//AQUA_PUMP_FISH_TANK_FLOW_METER_Pin is GPIO_PIN_7
+  //AQUA_PUMP_TOWER_FLOW_METER_Pin is GPIO_PIN_8
+  if(__HAL_GPIO_EXTI_GET_IT(GARDEN_PUMP_FLOW_METER_Pin) != RESET)
+  {
+		GARDEN_PUMP_FLOW_METER_count++;
+  }
+	if(__HAL_GPIO_EXTI_GET_IT(AQUA_PUMP_FISH_TANK_FLOW_METER_Pin) != RESET) 
+	{
+		AQUA_PUMP_FISH_TANK_FLOW_METER_count++;
+	}
+	if(__HAL_GPIO_EXTI_GET_IT(AQUA_PUMP_TOWER_FLOW_METER_Pin) != RESET) 
+	{
+		AQUA_PUMP_TOWER_FLOW_METER_count++;
+	}
+	
+  /* USER CODE END EXTI9_5_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_6);
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_7);
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_8);
+  /* USER CODE BEGIN EXTI9_5_IRQn 1 */
+
+  /* USER CODE END EXTI9_5_IRQn 1 */
 }
 
 /**

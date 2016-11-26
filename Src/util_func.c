@@ -11,6 +11,7 @@ extern uint8_t debug_rx_buf[DEBUG_RX_BUF_SIZE];
 extern SemaphoreHandle_t xSemaphore_printf;
 extern QueueHandle_t xQueue_debug_parse_data_rx;
 
+
 void print_timestamp(void)
 {
 		RTC_TimeTypeDef time;
@@ -288,3 +289,8 @@ void status_led_task ( void * pvParameters )
 			}
 	}
 }
+
+
+
+
+	

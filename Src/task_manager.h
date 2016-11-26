@@ -3,3 +3,4 @@
 
 void manage_garden(void * pvParameters);
 void initialize_system(void);
+void test_task(void * pvParameters);

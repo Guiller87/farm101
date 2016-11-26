@@ -55,5 +55,6 @@ enddevice\garden_tasks.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.
 enddevice\garden_tasks.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h
 enddevice\garden_tasks.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h
 enddevice\garden_tasks.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h
+enddevice\garden_tasks.o: ..\Src\water_flow.h
 enddevice\garden_tasks.o: ..\Src\garden_tasks.h
 enddevice\garden_tasks.o: ..\Src\util_func.h

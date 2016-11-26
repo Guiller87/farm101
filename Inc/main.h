@@ -134,6 +134,10 @@
 #define DEBUG_RX_BUF_SIZE 50
 #define XBEE_RX_BUF_SIZE 100
 
+#define GARDEN_FLOW_SENSOR_TIM htim3
+#define GARDEN_FLOW_SENSOR_CH TIM_CHANNEL_1
+
+
 /* USER CODE END Private defines */
 
 /**
