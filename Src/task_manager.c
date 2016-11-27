@@ -10,8 +10,11 @@
 
 extern QueueHandle_t xQueue_rtc_alarm;
 extern QueueHandle_t xQueue_water_garden;
+extern QueueHandle_t xQueue_check_flow_meters;
+
 extern RTC_HandleTypeDef hrtc;
 extern SemaphoreHandle_t xSemaphore_printf;
+
 
 //used in test_task for testing only
 extern TIM_HandleTypeDef htim3; //timer used for garden pump flow sensor
@@ -29,17 +32,30 @@ void manage_garden( void * pvParameters )
 			{
 					print_timestamp(); //remove this in final. must not print always for good logging.
 				
+				  //get current time
 					HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
 					HAL_RTC_GetDate(&hrtc, &date, RTC_FORMAT_BIN);
 				
-					//check garden pump schedules
-					if( ((time.Hours == GARDEN_PUMP_SCHED_HOUR_1) && (time.Minutes == GARDEN_PUMP_SCHED_MIN_1)) || 
-						  ((time.Hours == GARDEN_PUMP_SCHED_HOUR_2) && (time.Minutes == GARDEN_PUMP_SCHED_MIN_2)) ||
-					    ((time.Hours == GARDEN_PUMP_SCHED_HOUR_3) && (time.Minutes == GARDEN_PUMP_SCHED_MIN_3))
+					/********garden pump watering start ******************/
+				  // use else if with flow meters checking. they are not to be done at the same time.
+					if( ((time.Hours == GARDEN_PUMP_SCHED_HOUR_1) && (time.Minutes == GARDEN_PUMP_SCHED_MIN_1)) ||  //9AM
+						  ((time.Hours == GARDEN_PUMP_SCHED_HOUR_2) && (time.Minutes == GARDEN_PUMP_SCHED_MIN_2)) ||  //5PM
+					    ((time.Hours == GARDEN_PUMP_SCHED_HOUR_3) && (time.Minutes == GARDEN_PUMP_SCHED_MIN_3))     //1AM
 					  )
 					{
 							 xQueueSend(xQueue_water_garden, &buf, 1000);
+					} /********garden pump watering end******************/
+					/********flow meters checking start ******************/	
+					//set to every 10 minutes by checking in every multiple of 10 minutes
+					 else if( (time.Minutes == 0) || (time.Minutes == 10) || (time.Minutes == 20) || (time.Minutes == 30) ||
+		          (time.Minutes == 40) || (time.Minutes == 50) || (time.Minutes == 60)
+					)
+					{
+					     xQueueSend(xQueue_check_flow_meters, &buf, 1000);
 					}
+					/********flow meters checking end ******************/			
+			
+					
 					set_RTC_alarm(SYS_RTC_ALARM_MIN);
 			}
 		}

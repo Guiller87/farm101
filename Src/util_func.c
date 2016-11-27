@@ -12,7 +12,7 @@ extern SemaphoreHandle_t xSemaphore_printf;
 extern QueueHandle_t xQueue_debug_parse_data_rx;
 
 
-void print_timestamp(void)
+void print_timestamp(void) // caller of this function should not take xSemaphore_printf
 {
 		RTC_TimeTypeDef time;
 		RTC_DateTypeDef date;

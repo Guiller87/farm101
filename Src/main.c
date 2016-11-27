@@ -105,10 +105,12 @@ SemaphoreHandle_t xSemaphore_printf = NULL;
 QueueHandle_t xQueue_debug_parse_data_rx = NULL;
 QueueHandle_t xQueue_rtc_alarm = NULL;
 QueueHandle_t xQueue_water_garden = NULL;
+QueueHandle_t xQueue_check_flow_meters = NULL;
 
 TaskHandle_t debug_parse_data_rx_handle = NULL;
 TaskHandle_t manage_garden_handle = NULL;
 TaskHandle_t water_garden_handle = NULL;
+TaskHandle_t check_flow_meters_handle = NULL;
 TaskHandle_t test_task_handle = NULL;
 
 
@@ -236,6 +238,7 @@ int main(void)
 	ret_val = xTaskCreate(debug_parse_data_rx, "debugtask", configMINIMAL_STACK_SIZE, &sys_stat, 1, &debug_parse_data_rx_handle); 
 	ret_val = xTaskCreate(manage_garden, "manage_garden", configMINIMAL_STACK_SIZE, &sys_stat, 1, &manage_garden_handle); 
 	ret_val = xTaskCreate(water_garden, "water_garden", configMINIMAL_STACK_SIZE, &sys_stat, 1, &water_garden_handle); 
+	ret_val = xTaskCreate(check_flow_meters, "check_flow_meters", configMINIMAL_STACK_SIZE, &sys_stat, 1, &check_flow_meters_handle); 
   //ret_val = xTaskCreate(test_task, "test", configMINIMAL_STACK_SIZE, &sys_stat, 1, &test_task_handle); 
 	  
   /* USER CODE END RTOS_THREADS */
@@ -245,6 +248,7 @@ int main(void)
 	xQueue_debug_parse_data_rx = xQueueCreate( 1, 1);
 	xQueue_rtc_alarm = xQueueCreate( 1, 1);
 	xQueue_water_garden = xQueueCreate( 1, 1);
+	xQueue_check_flow_meters = xQueueCreate( 1, 1);
 	//xQueue_read_am2302 = xQueueCreate( 1, 1);
 	//xQueue_parse_xbee_rx = xQueueCreate( 1, 1);
 
