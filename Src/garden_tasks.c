@@ -190,21 +190,29 @@ void get_soil_moisture(void * pvParameters)
 
 void read_garden_tank_level(void * pvParameters)
 {
-	  uint32_t ret_val;
-	  while(1)
-		{
-				if(xQueueReceive(xQueue_read_garden_tank_level, &ret_val, 1000))
-				{	 
-						vTaskSuspendAll();
-						ret_val = measure_distance(GARDEN_TANK_LEVEL_TRIG_GPIO_Port, GARDEN_TANK_LEVEL_TRIG_Pin, 
-																			 GARDEN_TANK_LEVEL_ECHO_GPIO_Port, GARDEN_TANK_LEVEL_ECHO_Pin);
-						xTaskResumeAll();
+	uint32_t ret_val;
+	while(1)
+	{
+		if(xQueueReceive(xQueue_read_garden_tank_level, &ret_val, 1000))
+		{	 
+			vTaskSuspendAll();
+			ret_val = measure_distance(GARDEN_TANK_LEVEL_TRIG_GPIO_Port, GARDEN_TANK_LEVEL_TRIG_Pin, 
+																 GARDEN_TANK_LEVEL_ECHO_GPIO_Port, GARDEN_TANK_LEVEL_ECHO_Pin);
+			xTaskResumeAll();
 
-						if(xSemaphoreTake(xSemaphore_printf, 5000))
-						{
-								printf("Garden tank water level = %d cm\r\n", ret_val);
-								xSemaphoreGive(xSemaphore_printf);
-						}					
+			if(xSemaphoreTake(xSemaphore_printf, 5000))
+			{
+				if(ret_val == DISTANCE_ERROR)
+				{
+					printf("Garden tank water level reading failed");
+					xSemaphoreGive(xSemaphore_printf);					
 				}
-		}	
+				else
+				{
+					printf("Garden tank water level = %d cm\r\n", ret_val);
+					xSemaphoreGive(xSemaphore_printf);
+				}
+			}					
+		}
+	}	
 }

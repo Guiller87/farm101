@@ -183,7 +183,7 @@ int main(void)
   MX_SPI1_Init();
   MX_TIM4_Init();
   MX_UART5_Init();
-  //MX_ADC3_Init();
+  MX_ADC3_Init();
   MX_I2C3_Init();
   MX_ADC1_Init();
 
@@ -250,7 +250,7 @@ int main(void)
 	ret_val = xTaskCreate(read_garden_tank_level, "read_garden_tank_level", configMINIMAL_STACK_SIZE, &sys_stat, 1, &read_garden_tank_level_handle); 
 	ret_val = xTaskCreate(xbee_rx_task, "xbee_rx_task", ((uint16_t)1024), &sys_stat, 1, &xbee_rx_task_handle); 
 
-  //ret_val = xTaskCreate(test_task, "test", configMINIMAL_STACK_SIZE, &sys_stat, 1, &test_task_handle); 
+  //ret_val = xTaskCreate(test_task, "test", ((uint16_t)384), &sys_stat, 1, &test_task_handle); 
 	  
   /* USER CODE END RTOS_THREADS */
 
@@ -262,15 +262,15 @@ int main(void)
 	xQueue_check_flow_meters = xQueueCreate( 1, 1);
 	xQueue_read_temp_humid = xQueueCreate( 1, 1);
 	xQueue_parse_xbee_rx = xQueueCreate( 1, 1);
-  xQueue_read_soil_moisture =  xQueueCreate( 1, 1);
+	xQueue_read_soil_moisture =  xQueueCreate( 1, 1);
 	xQueue_read_garden_tank_level =  xQueueCreate( 1, 1);
-	
+
 	sys_stat = SYS_STAT_RUNTIME_OK;
 	initialize_system();
-	
+
 	if(xSemaphoreTake(xSemaphore_printf, 1000))
 	{
-		printf("Starting OS Kernel..\r\n");	
+		printf("Starting OS Kernel..\r\n");
 		xSemaphoreGive(xSemaphore_printf);
 	}
 
@@ -415,12 +415,20 @@ static void MX_ADC1_Init(void)
 
     /**Configure Regular Channel 
     */
-  sConfig.Channel = ADC_CHANNEL_13;
+  sConfig.Channel = ADC_CHANNEL_9;
   sConfig.Rank = 1;
   sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;
   sConfig.SingleDiff = ADC_SINGLE_ENDED;
   sConfig.OffsetNumber = ADC_OFFSET_NONE;
   sConfig.Offset = 0;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+    /**Configure Regular Channel 
+    */
+  sConfig.Channel = ADC_CHANNEL_13;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
@@ -498,7 +506,6 @@ static void MX_I2C3_Init(void)
   }
 
 }
-
 
 
 /* SPI1 init function */

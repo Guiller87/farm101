@@ -22,12 +22,29 @@ Dialog DLL:      TCM.DLL V1.14.5.0
  
 <h2>Project:</h2>
 D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\EndDevice.uvprojx
-Project File Date:  12/01/2016
+Project File Date:  12/03/2016
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 (build 20)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'EndDevice'
-"EndDevice\EndDevice.axf" - 0 Error(s), 0 Warning(s).
+compiling garden_tasks.c...
+..\Src\water_pump.h(8): warning:  #1-D: last line of file ends without a newline
+  void pump_switch (GPIO_TypeDef* pump_port, uint16_t pump_pin, uint8_t state);
+..\Src\garden_tasks.h(8): warning:  #1-D: last line of file ends without a newline
+  void read_garden_tank_level(void * pvParameters);
+..\Src\util_func.h(16): warning:  #1-D: last line of file ends without a newline
+  void print_timestamp(void);
+..\Src\soil_moisture.h(5): warning:  #1-D: last line of file ends without a newline
+  uint32_t read_soil_moisture(ADC_HandleTypeDef hadc, uint32_t ADC_channel, uint8_t samples);
+..\Src\garden_tasks.c: 4 warnings, 0 errors
+compiling ultrasonic.c...
+..\Src\ultrasonic.c(33): warning:  #1-D: last line of file ends without a newline
+  }
+..\Src\ultrasonic.c: 1 warning, 0 errors
+linking...
+Program Size: Code=36056 RO-data=600 RW-data=252 ZI-data=18428  
+FromELF: creating hex file...
+"EndDevice\EndDevice.axf" - 0 Error(s), 5 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -45,7 +62,7 @@ Package Vendor: ARM
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:4.3.0
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:36
 </pre>
 </body>
 </html>
