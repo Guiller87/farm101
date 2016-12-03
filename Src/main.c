@@ -238,16 +238,17 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+	
+	ret_val = xTaskCreate(manage_garden, "manage_garden", configMINIMAL_STACK_SIZE, &sys_stat, 1, &manage_garden_handle); 
 
 	//ret_val = xTaskCreate(status_led_task, "statusLedTask", configMINIMAL_STACK_SIZE, &sys_stat, 1, &status_led_handle);  
 	ret_val = xTaskCreate(debug_parse_data_rx, "debugtask", configMINIMAL_STACK_SIZE, &sys_stat, 1, &debug_parse_data_rx_handle); 
-	ret_val = xTaskCreate(manage_garden, "manage_garden", configMINIMAL_STACK_SIZE, &sys_stat, 1, &manage_garden_handle); 
 	ret_val = xTaskCreate(water_garden, "water_garden", configMINIMAL_STACK_SIZE, &sys_stat, 1, &water_garden_handle); 
 	ret_val = xTaskCreate(check_flow_meters, "check_flow_meters", configMINIMAL_STACK_SIZE, &sys_stat, 1, &check_flow_meters_handle); 
 	ret_val = xTaskCreate(read_temp_humid, "read_temp_humid", configMINIMAL_STACK_SIZE, &sys_stat, 1, &read_temp_humid_handle); 
 	ret_val = xTaskCreate(get_soil_moisture, "read_soil_moisture", configMINIMAL_STACK_SIZE, &sys_stat, 1, &read_soil_moisture_handle); 
 	ret_val = xTaskCreate(read_garden_tank_level, "read_garden_tank_level", configMINIMAL_STACK_SIZE, &sys_stat, 1, &read_garden_tank_level_handle); 
-	//ret_val = xTaskCreate(xbee_rx_task, "xbee_rx_task", configMINIMAL_STACK_SIZE, &sys_stat, 1, &xbee_rx_task_handle); 
+	ret_val = xTaskCreate(xbee_rx_task, "xbee_rx_task", ((uint16_t)1024), &sys_stat, 1, &xbee_rx_task_handle); 
 
   //ret_val = xTaskCreate(test_task, "test", configMINIMAL_STACK_SIZE, &sys_stat, 1, &test_task_handle); 
 	  
