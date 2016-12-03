@@ -32,7 +32,7 @@
 "enddevice\stm32l4xx_hal_uart.o"
 "enddevice\stm32l4xx_hal_flash_ex.o"
 "enddevice\stm32l4xx_hal.o"
-"enddevice\system_stm32l4xx.o"
+"enddevice\system_stm32l4xx_1.o"
 "enddevice\stm32l4xx_hal_timebase_tim.o"
 "enddevice\freertos.o"
 "enddevice\stm32l4xx_it.o"
@@ -44,6 +44,10 @@
 "enddevice\task_manager.o"
 "enddevice\water_flow.o"
 "enddevice\garden_tasks.o"
+"enddevice\xbee_test.o"
+"enddevice\am2302.o"
+"enddevice\soil_moisture.o"
+"enddevice\ultrasonic.o"
 --library_type=microlib --strict --scatter "EndDevice\EndDevice.sct"
 --diag_suppress=L6329 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

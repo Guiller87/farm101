@@ -56,8 +56,6 @@ BaseType_t xHigherPriorityTaskWoken;
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-extern ADC_HandleTypeDef hadc1;
-extern ADC_HandleTypeDef hadc2;
 extern RTC_HandleTypeDef hrtc;
 extern SPI_HandleTypeDef hspi1;
 extern UART_HandleTypeDef huart5;
@@ -89,21 +87,6 @@ void SysTick_Handler(void)
 /* For the available peripheral interrupt handler names,                      */
 /* please refer to the startup file (startup_stm32l4xx.s).                    */
 /******************************************************************************/
-
-/**
-* @brief This function handles ADC1 and ADC2 interrupts.
-*/
-void ADC1_2_IRQHandler(void)
-{
-  /* USER CODE BEGIN ADC1_2_IRQn 0 */
-
-  /* USER CODE END ADC1_2_IRQn 0 */
-  HAL_ADC_IRQHandler(&hadc1);
-  HAL_ADC_IRQHandler(&hadc2);
-  /* USER CODE BEGIN ADC1_2_IRQn 1 */
-
-  /* USER CODE END ADC1_2_IRQn 1 */
-}
 
 /**
 * @brief This function handles EXTI line[9:5] interrupts.
@@ -190,6 +173,22 @@ void USART2_IRQHandler(void)
 }
 
 /**
+* @brief This function handles EXTI line[15:10] interrupts.
+*/
+void EXTI15_10_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI15_10_IRQn 0 */
+
+  /* USER CODE END EXTI15_10_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_10);
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_11);
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_15);
+  /* USER CODE BEGIN EXTI15_10_IRQn 1 */
+
+  /* USER CODE END EXTI15_10_IRQn 1 */
+}
+
+/**
 * @brief This function handles RTC alarm interrupt through EXTI line 18.
 */
 void RTC_Alarm_IRQHandler(void)
@@ -221,11 +220,10 @@ void UART5_IRQHandler(void)
 	if( xbee_rx_buff[0] == 0x7E ) 
 	{
 		HAL_UART_Receive(&huart5, &xbee_rx_buff[1], 2, 100);	
-		len = ( (( (uint16_t)(xbee_rx_buff[1]) ) << 8) + xbee_rx_buff[2] + 1);
+		len = ( (( (uint16_t)(xbee_rx_buff[1]) ) << 8) + xbee_rx_buff[2] + 1 );
 		ret_val = HAL_UART_Receive(&huart5, &xbee_rx_buff[3], len, 100);
 		xQueueSendFromISR(xQueue_parse_xbee_rx, &len, &xHigherPriorityTaskWoken);
 	}
-	//xTaskResumeAll();
 	
   /* USER CODE END UART5_IRQn 0 */
   HAL_UART_IRQHandler(&huart5);

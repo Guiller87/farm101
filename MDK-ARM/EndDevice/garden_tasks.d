@@ -58,3 +58,6 @@ enddevice\garden_tasks.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart
 enddevice\garden_tasks.o: ..\Src\water_flow.h
 enddevice\garden_tasks.o: ..\Src\garden_tasks.h
 enddevice\garden_tasks.o: ..\Src\util_func.h
+enddevice\garden_tasks.o: ..\Src\am2302.h
+enddevice\garden_tasks.o: ..\Src\soil_moisture.h
+enddevice\garden_tasks.o: ..\Src\ultrasonic.h

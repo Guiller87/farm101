@@ -59,3 +59,5 @@ enddevice\task_manager.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/eve
 enddevice\task_manager.o: ..\Src\util_func.h
 enddevice\task_manager.o: ..\Src\water_pump.h
 enddevice\task_manager.o: ..\Src\water_flow.h
+enddevice\task_manager.o: ..\Src\am2302.h
+enddevice\task_manager.o: ..\Src\soil_moisture.h

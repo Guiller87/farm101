@@ -16,8 +16,8 @@
 
 #define period_1uS 80
 
-void Reinit_SW_Pin(GPIO_TypeDef* SWP_PORT, uint16_t SWP_Pin, uint8_t IO);
-uint8_t read_data_am2302(GPIO_TypeDef* SWP_PORT, uint16_t SWP_Pin, uint32_t* data);
+void Reinit_SW_Pin(GPIO_TypeDef* swp_port, uint16_t swp_Pin, uint8_t IO);
+uint8_t read_data_am2302(GPIO_TypeDef* swp_port, uint16_t swp_Pin, uint32_t* data);
 
 void timer_uS_start(uint32_t period);
 void timer_uS_stop(void);

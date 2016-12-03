@@ -53,11 +53,12 @@
 #include "util_func.h"
 #include "task_manager.h"
 #include "garden_tasks.h"
+#include "xbee_test.h"
+#include "soil_moisture.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
-ADC_HandleTypeDef hadc2;
 ADC_HandleTypeDef hadc3;
 
 I2C_HandleTypeDef hi2c3;
@@ -106,16 +107,23 @@ QueueHandle_t xQueue_debug_parse_data_rx = NULL;
 QueueHandle_t xQueue_rtc_alarm = NULL;
 QueueHandle_t xQueue_water_garden = NULL;
 QueueHandle_t xQueue_check_flow_meters = NULL;
+QueueHandle_t xQueue_read_temp_humid = NULL;
+QueueHandle_t xQueue_read_soil_moisture = NULL;
+QueueHandle_t xQueue_parse_xbee_rx = NULL;
+QueueHandle_t xQueue_read_garden_tank_level = NULL;
+
 
 TaskHandle_t debug_parse_data_rx_handle = NULL;
 TaskHandle_t manage_garden_handle = NULL;
 TaskHandle_t water_garden_handle = NULL;
 TaskHandle_t check_flow_meters_handle = NULL;
 TaskHandle_t test_task_handle = NULL;
+TaskHandle_t read_temp_humid_handle = NULL;
+TaskHandle_t read_soil_moisture_handle = NULL;
+TaskHandle_t read_garden_tank_level_handle = NULL;
+TaskHandle_t xbee_rx_task_handle = NULL;
 
 
-QueueHandle_t xQueue_read_am2302 = NULL;
-QueueHandle_t xQueue_parse_xbee_rx = NULL;
 TaskHandle_t status_led_handle = NULL;
 
 
@@ -128,14 +136,13 @@ void SystemClock_Config(void);
 void Error_Handler(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
-static void MX_ADC1_Init(void);
 static void MX_TIM2_Init(void);
-static void MX_ADC2_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_TIM4_Init(void);
 static void MX_UART5_Init(void);
 static void MX_ADC3_Init(void);
 static void MX_I2C3_Init(void);
+static void MX_ADC1_Init(void);
 void StartDefaultTask(void const * argument);
 
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
@@ -172,14 +179,13 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART2_UART_Init();
-//  MX_ADC1_Init();
   MX_TIM2_Init();
-//  MX_ADC2_Init();
   MX_SPI1_Init();
   MX_TIM4_Init();
   MX_UART5_Init();
-//  MX_ADC3_Init();
+  //MX_ADC3_Init();
   MX_I2C3_Init();
+  MX_ADC1_Init();
 
   /* USER CODE BEGIN 2 */
 
@@ -189,17 +195,16 @@ int main(void)
 	
 	//Enable UART2 RX Interrupt
 	SET_BIT(huart2.Instance->CR1, USART_CR1_RXNEIE);
-  HAL_NVIC_SetPriority(USART2_IRQn, 5, 1); 
+  HAL_NVIC_SetPriority(USART2_IRQn, 6, 1); 
   HAL_NVIC_EnableIRQ(USART2_IRQn); 
 	
 	//Enable UART5 RX Interrupt
-	//SET_BIT(huart5.Instance->CR1, USART_CR1_RXNEIE);
-  //HAL_NVIC_SetPriority(UART5_IRQn, 5, 1); 
-  //HAL_NVIC_EnableIRQ(UART5_IRQn); 
-
+	SET_BIT(huart5.Instance->CR1, USART_CR1_RXNEIE);
+  HAL_NVIC_SetPriority(UART5_IRQn, 6, 1); 
+  HAL_NVIC_EnableIRQ(UART5_IRQn); 
 
 	//Enable RTC Alarm Interrupt
-  HAL_NVIC_SetPriority(RTC_Alarm_IRQn,8, 1); 
+  HAL_NVIC_SetPriority(RTC_Alarm_IRQn,5, 1); 
   HAL_NVIC_EnableIRQ(RTC_Alarm_IRQn); 	
 
   //Enable EXTI9_5_IRQn Interrupt for water flow meters
@@ -239,6 +244,11 @@ int main(void)
 	ret_val = xTaskCreate(manage_garden, "manage_garden", configMINIMAL_STACK_SIZE, &sys_stat, 1, &manage_garden_handle); 
 	ret_val = xTaskCreate(water_garden, "water_garden", configMINIMAL_STACK_SIZE, &sys_stat, 1, &water_garden_handle); 
 	ret_val = xTaskCreate(check_flow_meters, "check_flow_meters", configMINIMAL_STACK_SIZE, &sys_stat, 1, &check_flow_meters_handle); 
+	ret_val = xTaskCreate(read_temp_humid, "read_temp_humid", configMINIMAL_STACK_SIZE, &sys_stat, 1, &read_temp_humid_handle); 
+	ret_val = xTaskCreate(get_soil_moisture, "read_soil_moisture", configMINIMAL_STACK_SIZE, &sys_stat, 1, &read_soil_moisture_handle); 
+	ret_val = xTaskCreate(read_garden_tank_level, "read_garden_tank_level", configMINIMAL_STACK_SIZE, &sys_stat, 1, &read_garden_tank_level_handle); 
+	//ret_val = xTaskCreate(xbee_rx_task, "xbee_rx_task", configMINIMAL_STACK_SIZE, &sys_stat, 1, &xbee_rx_task_handle); 
+
   //ret_val = xTaskCreate(test_task, "test", configMINIMAL_STACK_SIZE, &sys_stat, 1, &test_task_handle); 
 	  
   /* USER CODE END RTOS_THREADS */
@@ -249,9 +259,11 @@ int main(void)
 	xQueue_rtc_alarm = xQueueCreate( 1, 1);
 	xQueue_water_garden = xQueueCreate( 1, 1);
 	xQueue_check_flow_meters = xQueueCreate( 1, 1);
-	//xQueue_read_am2302 = xQueueCreate( 1, 1);
-	//xQueue_parse_xbee_rx = xQueueCreate( 1, 1);
-
+	xQueue_read_temp_humid = xQueueCreate( 1, 1);
+	xQueue_parse_xbee_rx = xQueueCreate( 1, 1);
+  xQueue_read_soil_moisture =  xQueueCreate( 1, 1);
+	xQueue_read_garden_tank_level =  xQueueCreate( 1, 1);
+	
 	sys_stat = SYS_STAT_RUNTIME_OK;
 	initialize_system();
 	
@@ -415,59 +427,6 @@ static void MX_ADC1_Init(void)
 
 }
 
-/* ADC2 init function */
-static void MX_ADC2_Init(void)
-{
-
-  ADC_MultiModeTypeDef multimode;
-  ADC_ChannelConfTypeDef sConfig;
-
-    /**Common config 
-    */
-  hadc2.Instance = ADC2;
-  hadc2.Init.ClockPrescaler = ADC_CLOCK_ASYNC_DIV1;
-  hadc2.Init.Resolution = ADC_RESOLUTION_12B;
-  hadc2.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-  hadc2.Init.ScanConvMode = ADC_SCAN_DISABLE;
-  hadc2.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
-  hadc2.Init.LowPowerAutoWait = DISABLE;
-  hadc2.Init.ContinuousConvMode = DISABLE;
-  hadc2.Init.NbrOfConversion = 1;
-  hadc2.Init.DiscontinuousConvMode = DISABLE;
-  hadc2.Init.NbrOfDiscConversion = 1;
-  hadc2.Init.ExternalTrigConv = ADC_SOFTWARE_START;
-  hadc2.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
-  hadc2.Init.DMAContinuousRequests = DISABLE;
-  hadc2.Init.Overrun = ADC_OVR_DATA_PRESERVED;
-  hadc2.Init.OversamplingMode = DISABLE;
-  if (HAL_ADC_Init(&hadc2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-    /**Configure the ADC multi-mode 
-    */
-  multimode.Mode = ADC_MODE_INDEPENDENT;
-  if (HAL_ADCEx_MultiModeConfigChannel(&hadc2, &multimode) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-    /**Configure Regular Channel 
-    */
-  sConfig.Channel = ADC_CHANNEL_16;
-  sConfig.Rank = 1;
-  sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;
-  sConfig.SingleDiff = ADC_SINGLE_ENDED;
-  sConfig.OffsetNumber = ADC_OFFSET_NONE;
-  sConfig.Offset = 0;
-  if (HAL_ADC_ConfigChannel(&hadc2, &sConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-}
-
 /* ADC3 init function */
 static void MX_ADC3_Init(void)
 {
@@ -538,6 +497,8 @@ static void MX_I2C3_Init(void)
   }
 
 }
+
+
 
 /* SPI1 init function */
 static void MX_SPI1_Init(void)
@@ -716,11 +677,11 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : GARDEN_TANK_LEVEL_ECHO_Pin AQUA_FISH_FOOD_LEVEL_ECHO_Pin */
-  GPIO_InitStruct.Pin = GARDEN_TANK_LEVEL_ECHO_Pin|AQUA_FISH_FOOD_LEVEL_ECHO_Pin;
+  /*Configure GPIO pin : GARDEN_TANK_LEVEL_ECHO_Pin */
+  GPIO_InitStruct.Pin = GARDEN_TANK_LEVEL_ECHO_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+  HAL_GPIO_Init(GARDEN_TANK_LEVEL_ECHO_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : GARDEN_PUMP_FLOW_METER_Pin AQUA_PUMP_FISH_TANK_FLOW_METER_Pin AQUA_PUMP_TOWER_FLOW_METER_Pin */
   GPIO_InitStruct.Pin = GARDEN_PUMP_FLOW_METER_Pin|AQUA_PUMP_FISH_TANK_FLOW_METER_Pin|AQUA_PUMP_TOWER_FLOW_METER_Pin;
@@ -728,11 +689,11 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : AQUA_FISH_TANK_LEVEL_ECHO_Pin */
-  GPIO_InitStruct.Pin = AQUA_FISH_TANK_LEVEL_ECHO_Pin;
+  /*Configure GPIO pins : AQUA_FISH_TANK_LEVEL_ECHO_Pin AQUA_FISH_FOOD_LEVEL_ECHO_Pin */
+  GPIO_InitStruct.Pin = AQUA_FISH_TANK_LEVEL_ECHO_Pin|AQUA_FISH_FOOD_LEVEL_ECHO_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(AQUA_FISH_TANK_LEVEL_ECHO_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pin : AQUA_FISH_TANK_LEVEL_TRIG_Pin */
   GPIO_InitStruct.Pin = AQUA_FISH_TANK_LEVEL_TRIG_Pin;
@@ -754,6 +715,9 @@ static void MX_GPIO_Init(void)
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI9_5_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 }
 
@@ -821,15 +785,6 @@ void MX_RTC_Init(void)
   {
     Error_Handler();
   }
-	
-    /**Enable the Alarm B 
-    */
-//  sAlarm.AlarmDateWeekDay = 0x1;
-//  sAlarm.Alarm = RTC_ALARM_B;
-//  if (HAL_RTC_SetAlarm_IT(&hrtc, &sAlarm, RTC_FORMAT_BIN) != HAL_OK)
-//  {
-//    Error_Handler();
-//  }	
 	
 }
 

@@ -351,7 +351,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
+            <Optim>4</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -373,7 +373,7 @@
               <MiscControls>--C99</MiscControls>
               <Define>USE_HAL_DRIVER,STM32L476xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;         ../Drivers/STM32L4xx_HAL_Driver/Inc;         ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy;         ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;         ../Middlewares/Third_Party/FreeRTOS/Source/include;         ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;         ../Drivers/CMSIS/Include;         ../Drivers/CMSIS/Device/ST/STM32L4xx/Include;         ..\mbed_lib\XBeeLib;         ..\mbed_lib\XBeeLib\DigiLogger;         ..\mbed_lib\XBeeLib\FrameBuffer;         ..\mbed_lib\XBeeLib\FrameHandlers;         ..\mbed_lib\XBeeLib\Frames;         ..\mbed_lib\XBeeLib\IO;         ..\mbed_lib\XBeeLib\RemoteXBee;         ..\mbed_lib\XBeeLib\Utils;         ..\mbed_lib\XBeeLib\XBee;         ..\mbed_lib\XBeeLib\XBee802;         ..\mbed_lib\XBeeLib\XBeeDM;         ..\mbed_lib\XBeeLib\XBeeZB;         ..\mbed_lib\mbed;         ..\mbed_lib\mbed\TARGET_STM32L4;         ..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG;         .;         XBeeLib;         XBeeLib/FrameBuffer;         XBeeLib/FrameHandlers;         XBeeLib/Frames;         XBeeLib/IO;         XBeeLib/RemoteXBee;         XBeeLib/Utils;         XBeeLib/XBee;         XBeeLib/XBee802;         XBeeLib/XBeeDM;         XBeeLib/XBeeZB;         XBeeLib/DigiLogger;         mbed/;         mbed/TARGET_NUCLEO_L476RG;         mbed/TARGET_NUCLEO_L476RG/TARGET_STM;         mbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4;         mbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG;         mbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD</IncludePath>
+              <IncludePath>../Inc;              ../Drivers/STM32L4xx_HAL_Driver/Inc;              ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy;              ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;              ../Middlewares/Third_Party/FreeRTOS/Source/include;              ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;              ../Drivers/CMSIS/Include;              ../Drivers/CMSIS/Device/ST/STM32L4xx/Include;              ..\mbed_lib\XBeeLib;              ..\mbed_lib\XBeeLib\DigiLogger;              ..\mbed_lib\XBeeLib\FrameBuffer;              ..\mbed_lib\XBeeLib\FrameHandlers;              ..\mbed_lib\XBeeLib\Frames;              ..\mbed_lib\XBeeLib\IO;              ..\mbed_lib\XBeeLib\RemoteXBee;              ..\mbed_lib\XBeeLib\Utils;              ..\mbed_lib\XBeeLib\XBee;              ..\mbed_lib\XBeeLib\XBee802;              ..\mbed_lib\XBeeLib\XBeeDM;              ..\mbed_lib\XBeeLib\XBeeZB;              ..\mbed_lib\mbed;              ..\mbed_lib\mbed\TARGET_STM32L4;              ..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG;              .;              XBeeLib;              XBeeLib/FrameBuffer;              XBeeLib/FrameHandlers;              XBeeLib/Frames;              XBeeLib/IO;              XBeeLib/RemoteXBee;              XBeeLib/Utils;              XBeeLib/XBee;              XBeeLib/XBee802;              XBeeLib/XBeeDM;              XBeeLib/XBeeZB;              XBeeLib/DigiLogger;              mbed/;              mbed/TARGET_NUCLEO_L476RG;              mbed/TARGET_NUCLEO_L476RG/TARGET_STM;              mbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4;              mbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG;              mbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -599,7 +599,7 @@
             <File>
               <FileName>system_stm32l4xx.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Drivers/CMSIS//Device/ST/STM32L4xx/Source/Templates/system_stm32l4xx.c</FilePath>
+              <FilePath>../Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/system_stm32l4xx.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -660,6 +660,26 @@
               <FileName>garden_tasks.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Src\garden_tasks.c</FilePath>
+            </File>
+            <File>
+              <FileName>xbee_test.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\xbee_test.c</FilePath>
+            </File>
+            <File>
+              <FileName>am2302.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\am2302.c</FilePath>
+            </File>
+            <File>
+              <FileName>soil_moisture.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\soil_moisture.c</FilePath>
+            </File>
+            <File>
+              <FileName>ultrasonic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\ultrasonic.c</FilePath>
             </File>
           </Files>
         </Group>

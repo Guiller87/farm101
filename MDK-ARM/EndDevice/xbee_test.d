@@ -55,5 +55,4 @@ enddevice\xbee_test.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.
 enddevice\xbee_test.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 enddevice\xbee_test.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 enddevice\xbee_test.o: ..\Src\printf_mod.h
-enddevice\xbee_test.o: ..\Src\main.h
 enddevice\xbee_test.o: ..\Src\xbee_test.h

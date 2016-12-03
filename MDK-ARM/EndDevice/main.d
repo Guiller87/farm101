@@ -63,3 +63,5 @@ enddevice\main.o: ../Inc/stm32l4xx_it.h
 enddevice\main.o: ../Src/util_func.h
 enddevice\main.o: ../Src/task_manager.h
 enddevice\main.o: ../Src/garden_tasks.h
+enddevice\main.o: ../Src/xbee_test.h
+enddevice\main.o: ../Src/soil_moisture.h

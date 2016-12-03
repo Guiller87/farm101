@@ -101,45 +101,24 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc)
     }
   
     /**ADC1 GPIO Configuration    
+    PA1     ------> ADC1_IN6
+    PA4     ------> ADC1_IN9
+    PA7     ------> ADC1_IN12
     PC4     ------> ADC1_IN13 
     */
-    GPIO_InitStruct.Pin = WATERLEVEL1_Pin;
+    GPIO_InitStruct.Pin = GARDEN_SOIL_MOISTURE_1_Pin|GARDEN_SOIL_MOISTURE_4_Pin|GARDEN_SOIL_MOISTURE_3_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG_ADC_CONTROL;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
-    HAL_GPIO_Init(WATERLEVEL1_GPIO_Port, &GPIO_InitStruct);
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-    /* Peripheral interrupt init */
-    HAL_NVIC_SetPriority(ADC1_2_IRQn, 0, 0);
-    HAL_NVIC_EnableIRQ(ADC1_2_IRQn);
+    GPIO_InitStruct.Pin = GARDEN_SOIL_MOISTURE_2_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_ANALOG_ADC_CONTROL;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    HAL_GPIO_Init(GARDEN_SOIL_MOISTURE_2_GPIO_Port, &GPIO_InitStruct);
+
   /* USER CODE BEGIN ADC1_MspInit 1 */
 
   /* USER CODE END ADC1_MspInit 1 */
-  }
-  else if(hadc->Instance==ADC2)
-  {
-  /* USER CODE BEGIN ADC2_MspInit 0 */
-
-  /* USER CODE END ADC2_MspInit 0 */
-    /* Peripheral clock enable */
-    HAL_RCC_ADC_CLK_ENABLED++;
-    if(HAL_RCC_ADC_CLK_ENABLED==1){
-      __HAL_RCC_ADC_CLK_ENABLE();
-    }
-  
-    /**ADC2 GPIO Configuration    
-    PB1     ------> ADC2_IN16 
-    */
-    GPIO_InitStruct.Pin = GARDEN_SOIL_HUMIDITY_Pin;
-    GPIO_InitStruct.Mode = GPIO_MODE_ANALOG_ADC_CONTROL;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    HAL_GPIO_Init(GARDEN_SOIL_HUMIDITY_GPIO_Port, &GPIO_InitStruct);
-
-    /* Peripheral interrupt init */
-    HAL_NVIC_SetPriority(ADC1_2_IRQn, 0, 0);
-    HAL_NVIC_EnableIRQ(ADC1_2_IRQn);
-  /* USER CODE BEGIN ADC2_MspInit 1 */
-
-  /* USER CODE END ADC2_MspInit 1 */
   }
   else if(hadc->Instance==ADC3)
   {
@@ -182,51 +161,18 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* hadc)
     }
   
     /**ADC1 GPIO Configuration    
+    PA1     ------> ADC1_IN6
+    PA4     ------> ADC1_IN9
+    PA7     ------> ADC1_IN12
     PC4     ------> ADC1_IN13 
     */
-    HAL_GPIO_DeInit(WATERLEVEL1_GPIO_Port, WATERLEVEL1_Pin);
+    HAL_GPIO_DeInit(GPIOA, GARDEN_SOIL_MOISTURE_1_Pin|GARDEN_SOIL_MOISTURE_4_Pin|GARDEN_SOIL_MOISTURE_3_Pin);
 
-    /* Peripheral interrupt DeInit*/
-  /* USER CODE BEGIN ADC1:ADC1_2_IRQn disable */
-    /**
-    * Uncomment the line below to disable the "ADC1_2_IRQn" interrupt
-    * Be aware, disabling shared interrupt may affect other IPs
-    */
-    /* HAL_NVIC_DisableIRQ(ADC1_2_IRQn); */
-  /* USER CODE END ADC1:ADC1_2_IRQn disable */
+    HAL_GPIO_DeInit(GARDEN_SOIL_MOISTURE_2_GPIO_Port, GARDEN_SOIL_MOISTURE_2_Pin);
 
   /* USER CODE BEGIN ADC1_MspDeInit 1 */
 
   /* USER CODE END ADC1_MspDeInit 1 */
-  }
-  else if(hadc->Instance==ADC2)
-  {
-  /* USER CODE BEGIN ADC2_MspDeInit 0 */
-
-  /* USER CODE END ADC2_MspDeInit 0 */
-    /* Peripheral clock disable */
-    HAL_RCC_ADC_CLK_ENABLED--;
-    if(HAL_RCC_ADC_CLK_ENABLED==0){
-      __HAL_RCC_ADC_CLK_DISABLE();
-    }
-  
-    /**ADC2 GPIO Configuration    
-    PB1     ------> ADC2_IN16 
-    */
-    HAL_GPIO_DeInit(GARDEN_SOIL_HUMIDITY_GPIO_Port, GARDEN_SOIL_HUMIDITY_Pin);
-
-    /* Peripheral interrupt DeInit*/
-  /* USER CODE BEGIN ADC2:ADC1_2_IRQn disable */
-    /**
-    * Uncomment the line below to disable the "ADC1_2_IRQn" interrupt
-    * Be aware, disabling shared interrupt may affect other IPs
-    */
-    /* HAL_NVIC_DisableIRQ(ADC1_2_IRQn); */
-  /* USER CODE END ADC2:ADC1_2_IRQn disable */
-
-  /* USER CODE BEGIN ADC2_MspDeInit 1 */
-
-  /* USER CODE END ADC2_MspDeInit 1 */
   }
   else if(hadc->Instance==ADC3)
   {
@@ -361,14 +307,21 @@ void HAL_SPI_MspInit(SPI_HandleTypeDef* hspi)
     /**SPI1 GPIO Configuration    
     PA5     ------> SPI1_SCK
     PA6     ------> SPI1_MISO
-    PA7     ------> SPI1_MOSI 
+    PB5     ------> SPI1_MOSI 
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7;
+    GPIO_InitStruct.Pin = GPIO_PIN_5|GPIO_PIN_6;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
     GPIO_InitStruct.Alternate = GPIO_AF5_SPI1;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = GPIO_PIN_5;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+    GPIO_InitStruct.Alternate = GPIO_AF5_SPI1;
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
     /* Peripheral interrupt init */
     HAL_NVIC_SetPriority(SPI1_IRQn, 0, 0);
@@ -394,9 +347,11 @@ void HAL_SPI_MspDeInit(SPI_HandleTypeDef* hspi)
     /**SPI1 GPIO Configuration    
     PA5     ------> SPI1_SCK
     PA6     ------> SPI1_MISO
-    PA7     ------> SPI1_MOSI 
+    PB5     ------> SPI1_MOSI 
     */
-    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7);
+    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_5|GPIO_PIN_6);
+
+    HAL_GPIO_DeInit(GPIOB, GPIO_PIN_5);
 
     /* Peripheral interrupt DeInit*/
     HAL_NVIC_DisableIRQ(SPI1_IRQn);

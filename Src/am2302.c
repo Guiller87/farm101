@@ -7,7 +7,6 @@
 extern TIM_HandleTypeDef htim2;
 
 GPIO_InitTypeDef GPIO_InitStruct;
-extern uint32_t counter;
 
 uint8_t read_data_am2302(GPIO_TypeDef* swp_port, uint16_t swp_pin, uint32_t* data)
 {
@@ -55,8 +54,16 @@ uint8_t read_data_am2302(GPIO_TypeDef* swp_port, uint16_t swp_pin, uint32_t* dat
 	// start reading the 40 bit temp and humidity data
 	for(i = 0; i < 40; i++) {
 		 
-		//low signal is 50us. therefore longer than 50us of low is an error.	
-		while(HAL_GPIO_ReadPin(swp_port, swp_pin) == 1); 
+		//low signal is 50us. therefore longer than 50us of low is an error.
+		//while(HAL_GPIO_ReadPin(swp_port, swp_pin) == 1); 
+		//wait for the line to go low first
+		timer_uS_start(500 * period_1uS);
+		while(HAL_GPIO_ReadPin(swp_port, swp_pin) == 1){
+			if(READ_BIT(htim2.Instance->SR, TIM_SR_UIF))
+				return DHT22_RCV_RCV_TIMEOUT;       
+		}			
+		timer_uS_stop();
+		
 		timer_uS_start(70 * period_1uS);
 		while(HAL_GPIO_ReadPin(swp_port, swp_pin) == 0) {
 			if(READ_BIT(htim2.Instance->SR, TIM_SR_UIF))

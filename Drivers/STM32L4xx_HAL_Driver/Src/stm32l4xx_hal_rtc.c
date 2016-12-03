@@ -509,7 +509,7 @@ HAL_StatusTypeDef HAL_RTC_SetTime(RTC_HandleTypeDef *hrtc, RTC_TimeTypeDef *sTim
       {
         /* Enable the write protection for RTC registers */
         __HAL_RTC_WRITEPROTECTION_ENABLE(hrtc);
-
+ 
         hrtc->State = HAL_RTC_STATE_ERROR;
 
         /* Process Unlocked */ 
