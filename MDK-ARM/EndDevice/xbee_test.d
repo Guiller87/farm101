@@ -56,3 +56,4 @@ enddevice\xbee_test.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr
 enddevice\xbee_test.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 enddevice\xbee_test.o: ..\Src\printf_mod.h
 enddevice\xbee_test.o: ..\Src\xbee_test.h
+enddevice\xbee_test.o: ..\Src\util_func.h

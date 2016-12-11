@@ -61,3 +61,4 @@ enddevice\garden_tasks.o: ..\Src\util_func.h
 enddevice\garden_tasks.o: ..\Src\am2302.h
 enddevice\garden_tasks.o: ..\Src\soil_moisture.h
 enddevice\garden_tasks.o: ..\Src\ultrasonic.h
+enddevice\garden_tasks.o: ..\Src\xbee_test.h
