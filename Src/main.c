@@ -83,35 +83,22 @@ RTC_TimeTypeDef time;
 RTC_DateTypeDef date;
 RTC_AlarmTypeDef first_alarm;
 
-uint8_t sys_stat = 0;
+uint32_t sys_stat = 0;
 uint32_t GARDEN_PUMP_FLOW_METER_count = 0;
 uint32_t AQUA_PUMP_FISH_TANK_FLOW_METER_count = 0;
 uint32_t AQUA_PUMP_TOWER_FLOW_METER_count = 0;
 
-uint8_t check_flow_meter_counter = 0;
-
 uint8_t debug_rx_buf[DEBUG_RX_BUF_SIZE] = {0};
 uint8_t xbee_rx_buff[XBEE_RX_BUF_SIZE] = {0};
+uint8_t xbee_tx_buff[XBEE_TX_BUF_SIZE] = {0};
+uint8_t xbee_tx_buff_offset = 0;
+uint8_t xbee_flag = 0;
 
 uint8_t debug_rx_buf_idx = 0;
-uint32_t circulation_count = 0;
-uint32_t counter = 0;
-uint32_t temp1, temp2 = 0;
+//uint32_t counter = 0;
+uint8_t base_stn_dest_addr[] = {0x00, 0x13, 0xA2, 0x00, 0x40, 0xE7, 0xCB, 0x9A};
 
 BaseType_t ret_val = 0;
-
-SemaphoreHandle_t xSemaphore_printf = NULL;
-
-//used
-QueueHandle_t xQueue_debug_parse_data_rx = NULL;
-QueueHandle_t xQueue_rtc_alarm = NULL;
-QueueHandle_t xQueue_water_garden = NULL;
-QueueHandle_t xQueue_check_flow_meters = NULL;
-QueueHandle_t xQueue_read_temp_humid = NULL;
-QueueHandle_t xQueue_read_soil_moisture = NULL;
-QueueHandle_t xQueue_parse_xbee_rx = NULL;
-QueueHandle_t xQueue_read_garden_tank_level = NULL;
-
 
 TaskHandle_t debug_parse_data_rx_handle = NULL;
 TaskHandle_t manage_garden_handle = NULL;
@@ -122,10 +109,26 @@ TaskHandle_t read_temp_humid_handle = NULL;
 TaskHandle_t read_soil_moisture_handle = NULL;
 TaskHandle_t read_garden_tank_level_handle = NULL;
 TaskHandle_t xbee_rx_task_handle = NULL;
-
-
 TaskHandle_t status_led_handle = NULL;
+TaskHandle_t water_towers_handle = NULL;
+TaskHandle_t check_fish_food_handle = NULL;
+TaskHandle_t check_fish_tank_level_handle = NULL;
 
+QueueHandle_t xQueue_debug_parse_data_rx = NULL;
+QueueHandle_t xQueue_rtc_alarm = NULL;
+QueueHandle_t xQueue_water_garden = NULL;
+QueueHandle_t xQueue_check_flow_meters = NULL;
+QueueHandle_t xQueue_read_temp_humid = NULL;
+QueueHandle_t xQueue_read_soil_moisture = NULL;
+QueueHandle_t xQueue_parse_xbee_rx = NULL;
+QueueHandle_t xQueue_read_garden_tank_level = NULL;
+QueueHandle_t xQueue_water_towers = NULL;
+QueueHandle_t xQueue_check_fish_food = NULL;
+QueueHandle_t xQueue_check_fish_tank_level = NULL;
+
+
+SemaphoreHandle_t xSemaphore_send_log = NULL;
+SemaphoreHandle_t xSemaphore_timer2 = NULL;
 
 //TimerHandle_t xTimers_set_RTC;
 
@@ -195,20 +198,20 @@ int main(void)
 	
 	//Enable UART2 RX Interrupt
 	SET_BIT(huart2.Instance->CR1, USART_CR1_RXNEIE);
-  HAL_NVIC_SetPriority(USART2_IRQn, 6, 1); 
+  HAL_NVIC_SetPriority(USART2_IRQn, 7, 1); 
   HAL_NVIC_EnableIRQ(USART2_IRQn); 
 	
 	//Enable UART5 RX Interrupt
 	SET_BIT(huart5.Instance->CR1, USART_CR1_RXNEIE);
-  HAL_NVIC_SetPriority(UART5_IRQn, 6, 1); 
+  HAL_NVIC_SetPriority(UART5_IRQn, 5, 1); 
   HAL_NVIC_EnableIRQ(UART5_IRQn); 
 
 	//Enable RTC Alarm Interrupt
-  HAL_NVIC_SetPriority(RTC_Alarm_IRQn,5, 1); 
+  HAL_NVIC_SetPriority(RTC_Alarm_IRQn, 7, 1); 
   HAL_NVIC_EnableIRQ(RTC_Alarm_IRQn); 	
 
   //Enable EXTI9_5_IRQn Interrupt for water flow meters
-  HAL_NVIC_SetPriority(EXTI9_5_IRQn,8, 1); 
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn,7, 1); 
   HAL_NVIC_EnableIRQ(EXTI9_5_IRQn); 	
 
   /* USER CODE END 2 */
@@ -219,8 +222,8 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
-	xSemaphore_printf = xSemaphoreCreateMutex();
-	
+	xSemaphore_send_log = xSemaphoreCreateMutex();
+	xSemaphore_timer2 = xSemaphoreCreateMutex();
   /* USER CODE END RTOS_SEMAPHORES */
 
   /* USER CODE BEGIN RTOS_TIMERS */
@@ -239,18 +242,21 @@ int main(void)
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
 	
-	ret_val = xTaskCreate(manage_garden, "manage_garden", configMINIMAL_STACK_SIZE, &sys_stat, 1, &manage_garden_handle); 
+	ret_val = xTaskCreate(manage_garden, "manage_garden", ((uint16_t)512), &sys_stat, 1, &manage_garden_handle); 
 
-	//ret_val = xTaskCreate(status_led_task, "statusLedTask", configMINIMAL_STACK_SIZE, &sys_stat, 1, &status_led_handle);  
+	ret_val = xTaskCreate(status_led_task, "statusLedTask", configMINIMAL_STACK_SIZE, &sys_stat, 1, &status_led_handle);  
 	ret_val = xTaskCreate(debug_parse_data_rx, "debugtask", configMINIMAL_STACK_SIZE, &sys_stat, 1, &debug_parse_data_rx_handle); 
 	ret_val = xTaskCreate(water_garden, "water_garden", configMINIMAL_STACK_SIZE, &sys_stat, 1, &water_garden_handle); 
 	ret_val = xTaskCreate(check_flow_meters, "check_flow_meters", configMINIMAL_STACK_SIZE, &sys_stat, 1, &check_flow_meters_handle); 
-	ret_val = xTaskCreate(read_temp_humid, "read_temp_humid", configMINIMAL_STACK_SIZE, &sys_stat, 1, &read_temp_humid_handle); 
-	ret_val = xTaskCreate(get_soil_moisture, "read_soil_moisture", configMINIMAL_STACK_SIZE, &sys_stat, 1, &read_soil_moisture_handle); 
+	ret_val = xTaskCreate(read_temp_humid, "read_temp_humid", ((uint16_t)512), &sys_stat, 1, &read_temp_humid_handle); 
+	ret_val = xTaskCreate(get_soil_moisture, "read_soil_moisture", ((uint16_t)512), &sys_stat, 1, &read_soil_moisture_handle); 
 	ret_val = xTaskCreate(read_garden_tank_level, "read_garden_tank_level", configMINIMAL_STACK_SIZE, &sys_stat, 1, &read_garden_tank_level_handle); 
 	ret_val = xTaskCreate(xbee_rx_task, "xbee_rx_task", ((uint16_t)1024), &sys_stat, 1, &xbee_rx_task_handle); 
+	ret_val = xTaskCreate(water_towers, "water_towers", ((uint16_t)512), &sys_stat, 1, &water_towers_handle); 
+	ret_val = xTaskCreate(check_fish_food, "check_fish_food", ((uint16_t)512), &sys_stat, 1, &check_fish_food_handle); 
+	ret_val = xTaskCreate(check_fish_tank_level, "check_fish_tank_level", ((uint16_t)512), &sys_stat, 1, &check_fish_tank_level_handle); 
 
-  //ret_val = xTaskCreate(test_task, "test", ((uint16_t)384), &sys_stat, 1, &test_task_handle); 
+  //ret_val = xTaskCreate(test_task, "test", ((uint16_t)512), &sys_stat, 1, &test_task_handle); 
 	  
   /* USER CODE END RTOS_THREADS */
 
@@ -264,16 +270,15 @@ int main(void)
 	xQueue_parse_xbee_rx = xQueueCreate( 1, 1);
 	xQueue_read_soil_moisture =  xQueueCreate( 1, 1);
 	xQueue_read_garden_tank_level =  xQueueCreate( 1, 1);
-
-	sys_stat = SYS_STAT_RUNTIME_OK;
+	xQueue_water_towers =  xQueueCreate( 1, 1);	
+  xQueue_check_fish_food =  xQueueCreate( 1, 1);	
+	xQueue_check_fish_tank_level =  xQueueCreate( 1, 1);	
+	
+	sys_stat = SYS_STAT_IDLE;
 	initialize_system();
 
-	if(xSemaphoreTake(xSemaphore_printf, 1000))
-	{
-		printf("Starting OS Kernel..\r\n");
-		xSemaphoreGive(xSemaphore_printf);
-	}
-
+	printf("Starting OS Kernel..\r\n");
+		
   /* USER CODE END RTOS_QUEUES */
  
 
@@ -506,7 +511,6 @@ static void MX_I2C3_Init(void)
   }
 
 }
-
 
 /* SPI1 init function */
 static void MX_SPI1_Init(void)

@@ -1,93 +1,284 @@
 
+#include "main.h"
 #include "stm32l4xx_hal.h"
 #include "cmsis_os.h"
-#include "aqua_tasks.h"
 #include "printf_mod.h"
 #include "main.h"
-#include "am2302.h"
-#include "task.h"
 #include "xbee_test.h"
+#include "aqua_tasks.h"
+#include "util_func.h"
+#include "water_pump.h"
+#include "water_flow.h"
+#include "ultrasonic.h"
 
-
-uint8_t msg_buf[] = "second task test";
-
-RTC_AlarmTypeDef next_alarm;
-
-
-extern uint8_t aqua_cmd_idx;
-extern uint8_t aqua_status;
-extern uint32_t circulation_count;
-extern uint32_t temp1, temp2;
-
-extern SemaphoreHandle_t xSemaphore_printf;
-
-extern QueueHandle_t xQueue_parse_data;
-extern QueueHandle_t xQueue_set_next_RTC_alarm;
-extern QueueHandle_t xQueue_read_am2302;
-extern QueueHandle_t xQueue_parse_xbee_rx;
-
-extern RTC_HandleTypeDef hrtc;
-extern RTC_TimeTypeDef time;
-extern RTC_DateTypeDef date;
-extern ADC_HandleTypeDef hadc2;
-extern TIM_HandleTypeDef htim2;
+extern uint32_t sys_stat;
+extern uint8_t xbee_flag;
+extern uint8_t base_stn_dest_addr[];
 extern UART_HandleTypeDef huart5;
 
-extern void MX_RTC_Init(void);
-void Error_Handler(void);
+extern QueueHandle_t xQueue_water_towers;
+extern QueueHandle_t xQueue_check_fish_food;
+extern QueueHandle_t xQueue_check_fish_tank_level;
 
+extern SemaphoreHandle_t xSemaphore_send_log;
+extern SemaphoreHandle_t xSemaphore_timer2;
 
-//void read_am2302(void * pvParameters) {
-//	
-//		uint8_t buf;
-//		uint32_t value;
-//		uint8_t i = 0;
-//			
-//		uint8_t ret_val = 1;
-//		uint32_t data = 0;
-//		uint16_t humidity = 0;
-//		uint16_t temperature = 0;
-//	
-//		//uint8_t xbee_tx_buf[30] = {0x7E, 0x00, 0x1A, 0x10, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFE, 0x00, 0x00, 0x74, 0x65, 0x73, 0x74, 0x20, 0x66, 0x72, 0x6F, 0x6D, 0x20, 0x65, 0x64, 0x65, 0x64, 0x74};
-//		uint8_t xbee_tx_buf[95] = {0x7E, 0x00, 0x5B, 0x10, 0x01, 0x00, 0x13, 0xA2, 0x00, 0x40, 0xE7, 0xCB, 0x9A, 0xFF, 0xFE, 0x00, 0x00, 0x74, 0x65, 0x73, 0x74, 0x20, 0x6C, 0x6F, 0x6E, 0x67, 0x20, 0x6D, 0x65, 0x73, 0x73, 0x61, 
-//															 0x67, 0x65, 0x20, 0x66, 0x72, 0x6F, 0x6D, 0x20, 0x45, 0x44, 0x2E, 0x20, 0x66, 0x61, 0x72, 0x6D, 0x69, 0x6E, 0x67, 0x20, 0x31, 0x30, 0x31, 0x20, 0x69, 0x73, 0x20, 0x69, 0x6E, 0x20, 0x64, 0x65,
-//															 0x76, 0x65, 0x6C, 0x70, 0x6D, 0x65, 0x6E, 0x74, 0x2E, 0x20, 0x74, 0x65, 0x73, 0x74, 0x69, 0x6E, 0x67, 0x20, 0x78, 0x62, 0x65, 0x65, 0x20, 0x6D, 0x6F, 0x64, 0x75, 0x6C, 0x65, 0x21, 0x9C};
-//			
-//		while(1){
-//			if(xQueueReceive(xQueue_read_am2302, &buf, 1000)) {
-//		
-//					vTaskSuspendAll();
-//					//taskENTER_CRITICAL();  //use vTaskSuspendAll() instead of taskENTER_CRITICAL(). xbee uart5 received can not receive properly if taskENTER_CRITICAL() is used.
-//					ret_val = read_data_am2302(&data);
-//					//taskEXIT_CRITICAL();
-//					xTaskResumeAll();
+void water_towers(void * pvParameters)
+{
+	uint8_t count, buf;
+	uint32_t ret_val;
+	uint8_t value[3] = {0};
+	
+	while(1)
+	{
+		if(xQueueReceive(xQueue_water_towers, &ret_val, 1000))
+		{	
+      sys_stat |= SYS_STAT_AQUA_WATERING_MASK;
+			
+			if(xSemaphoreTake(xSemaphore_send_log, 10000))
+			{
+				printf("AQUA Watering Towers START\r\n");
+				for(count = 0; count < MAX_RETRY; count++)
+				{
+						xbee_tx(&huart5, &base_stn_dest_addr[0] , "AQUA Watering Towers START", 26, &buf, 0);
+						vTaskDelay(MAX_WAIT_FOR_RESP / portTICK_PERIOD_MS );
+						if(xbee_flag & TX_OK) 
+						{
+							xbee_flag &= (~TX_OK);
+							break;
+						}
+				}
+				xSemaphoreGive(xSemaphore_send_log);
+			}
+			
+			start_flow_rate(AQUA_PUMP_TOWER_FLOW_METER_Pin);
 
-//					print_timestamp();
-//				
-//					humidity = (uint16_t) ((data & 0xFFFF0000) >> 16);
-//					temperature = (uint16_t) (data & 0xFFFF);
-//					if(xSemaphoreTake(xSemaphore_printf, 0))
-//					{					
-//						if(!ret_val) {
-//								printf("Humidity = %d.%d %%RH    ", (humidity / 10), (humidity % 10) );
-//								if ((temperature & 0x8000) != 0) {
-//										printf("-");
-//								}
-//								printf("Temperature = %d.%d C \r\n", ((temperature & 0x7fff) / 10), (temperature & 0x7fff) % 10);
-//						}
-//						else {
-//							printf("am2302 error %d \r\n", ret_val);
-//						}
-//						xSemaphoreGive(xSemaphore_printf);
-//						
-//						HAL_UART_Transmit(&huart5, xbee_tx_buf, 95, 1000);
-//					}				
-//			}
-//		}
-//}
+			pump_switch(AQUA_PUMP_TOWER_GPIO_Port, AQUA_PUMP_TOWER_Pin, ON);
+			//water for 60s
+			vTaskDelay(60000 / portTICK_PERIOD_MS );
+			pump_switch(AQUA_PUMP_TOWER_GPIO_Port, AQUA_PUMP_TOWER_Pin, OFF);
+			
+			ret_val = read_flow_rate(AQUA_PUMP_TOWER_FLOW_METER_Pin);
+			
+			//update status
+			if(xSemaphoreTake(xSemaphore_send_log, 10000))
+			{
+				printf("AQUA Watering Towers END");
+				printf("AQUA Towers Flow meter reading = %d\r\n", ret_val);
 
+				for(count = 0; count < MAX_RETRY; count++)
+				{
+						xbee_tx(&huart5, &base_stn_dest_addr[0] , "AQUA Watering Towers END", 24, &buf, 0);
+						vTaskDelay(MAX_WAIT_FOR_RESP / portTICK_PERIOD_MS );
+						if(xbee_flag & TX_OK) 
+						{
+							xbee_flag &= (~TX_OK);
+							break;
+						}
+				}
 
+				convert_to_ascii(ret_val, &value[0]);
+				for(count = 0; count < MAX_RETRY; count++)
+				{
+						xbee_tx(&huart5, &base_stn_dest_addr[0] , "AQUA Towers Flow meter reading = ", 33, &value[0], 3);
+						vTaskDelay(MAX_WAIT_FOR_RESP / portTICK_PERIOD_MS );
+						if(xbee_flag & TX_OK) 
+						{
+							xbee_flag &= (~TX_OK);
+							break;
+						}
+				}	
+	
+				xSemaphoreGive(xSemaphore_send_log);
+			}
+			
+			//wait for 10s to drain remaining water in the line
+			vTaskDelay(10000 / portTICK_PERIOD_MS );
+			
+			//check if valve is successfully turned off
+			start_flow_rate(AQUA_PUMP_TOWER_FLOW_METER_Pin);
+			vTaskDelay(10000 / portTICK_PERIOD_MS );
+			ret_val = read_flow_rate(AQUA_PUMP_TOWER_FLOW_METER_Pin);
+			
+			//update status
+			if(xSemaphoreTake(xSemaphore_send_log, 10000))
+			{
+				if(ret_val > 3) 
+				{
+				  printf("AQUA Tower Watering Pump failed to turned off!!!");
 
+					for(count = 0; count < MAX_RETRY; count++)
+					{
+							xbee_tx(&huart5, &base_stn_dest_addr[0] , "AQUA Tower Watering Pump failed to turned off!!!", 48, &value[0], 0);
+							vTaskDelay(MAX_WAIT_FOR_RESP / portTICK_PERIOD_MS );
+							if(xbee_flag & TX_OK) 
+							{
+								xbee_flag &= (~TX_OK);
+								break;
+							}
+					}	
+				} 		
+				else 
+				{
+					printf("AQUA Tower Watering Pump turned off...");
 
+					for(count = 0; count < MAX_RETRY; count++)
+					{
+							xbee_tx(&huart5, &base_stn_dest_addr[0] , "AQUA Tower Watering Pump turned off", 35, &value[0], 0);
+							vTaskDelay(MAX_WAIT_FOR_RESP / portTICK_PERIOD_MS );
+							if(xbee_flag & TX_OK) 
+							{
+								xbee_flag &= (~TX_OK);
+								break;
+							}
+					}	
+				}	
+				printf("AQUA Towers Flow meter reading = %d\r\n", ret_val);
+				
+				convert_to_ascii(ret_val, &value[0]);	
+				for(count = 0; count < MAX_RETRY; count++)
+				{
+						xbee_tx(&huart5, &base_stn_dest_addr[0] , "AQUA Towers Flow meter reading = ", 33, &value[0], 3);				
+						vTaskDelay(MAX_WAIT_FOR_RESP / portTICK_PERIOD_MS );
+						if(xbee_flag & TX_OK) 
+						{
+							xbee_flag &= (~TX_OK);
+							break;
+						}
+				}	
+				xSemaphoreGive(xSemaphore_send_log);						
+			}
 
+      sys_stat &= (~SYS_STAT_AQUA_WATERING_MASK);
+		}
+	}
+}
+
+void check_fish_food(void * pvParameters)
+{
+	uint8_t count, buf;
+	uint32_t ret_val;
+	uint8_t value[3] = {0};
+	
+	while(1)
+	{
+		if(xQueueReceive(xQueue_check_fish_food, &ret_val, 1000))
+		{	
+      sys_stat |= SYS_STAT_AQUA_CHECKING_FISH_FOOD;
+			
+			if(xSemaphoreTake(xSemaphore_timer2, 1000))
+			{			
+				vTaskSuspendAll();
+				ret_val = measure_distance(GARDEN_TANK_LEVEL_TRIG_GPIO_Port, GARDEN_TANK_LEVEL_TRIG_Pin, 
+																	 GARDEN_TANK_LEVEL_ECHO_GPIO_Port, GARDEN_TANK_LEVEL_ECHO_Pin);
+				xTaskResumeAll();
+				
+				xSemaphoreGive(xSemaphore_timer2);
+			}
+			
+			if(xSemaphoreTake(xSemaphore_send_log, 10000))
+			{
+				if(ret_val == DISTANCE_ERROR)
+				{
+					printf("AQUA Fish food level check failed\r\n");
+
+					for(count = 0; count < MAX_RETRY; count++)
+					{
+							xbee_tx(&huart5, &base_stn_dest_addr[0] , "AQUA Fish food level check failed", 33, &value[0], 0);
+							vTaskDelay(MAX_WAIT_FOR_RESP / portTICK_PERIOD_MS );
+							if(xbee_flag & TX_OK) 
+							{
+								xbee_flag &= (~TX_OK);
+								break;
+							}
+					}
+				}
+				else
+				{
+					printf("AQUA Fish food level = %d cm\r\n", ret_val);
+					
+					convert_to_ascii(ret_val, &value[0]);
+					for(count = 0; count < MAX_RETRY; count++)
+					{
+							xbee_tx(&huart5, &base_stn_dest_addr[0] , "AQUA Fish food level in cm = ", 29, &value[0], 3);
+							vTaskDelay(MAX_WAIT_FOR_RESP / portTICK_PERIOD_MS );
+							if(xbee_flag & TX_OK) 
+							{
+								xbee_flag &= (~TX_OK);
+								break;
+							}
+					}						
+
+				}
+				xSemaphoreGive(xSemaphore_send_log);
+			}			
+			
+      sys_stat &= (~SYS_STAT_AQUA_CHECKING_FISH_FOOD);			
+		}
+	}
+}
+
+void check_fish_tank_level(void * pvParameters)
+{
+	uint8_t count, buf;
+	uint32_t ret_val;
+	uint8_t value[3] = {0};
+	
+	while(1)
+	{
+		if(xQueueReceive(xQueue_check_fish_tank_level, &ret_val, 1000))
+		{	
+      sys_stat |= SYS_STAT_AQUA_CHECKING_FISH_TANK;
+			
+			if(xSemaphoreTake(xSemaphore_timer2, 1000))
+			{			
+				vTaskSuspendAll();
+				ret_val = measure_distance(GARDEN_TANK_LEVEL_TRIG_GPIO_Port, GARDEN_TANK_LEVEL_TRIG_Pin, 
+																	 GARDEN_TANK_LEVEL_ECHO_GPIO_Port, GARDEN_TANK_LEVEL_ECHO_Pin);
+				xTaskResumeAll();
+				
+				xSemaphoreGive(xSemaphore_timer2);
+			}
+				
+				
+			if(xSemaphoreTake(xSemaphore_send_log, 10000))
+			{
+				if(ret_val == DISTANCE_ERROR)
+				{
+					printf("AQUA Fish tank level check failed\r\n");
+
+					for(count = 0; count < MAX_RETRY; count++)
+					{
+							xbee_tx(&huart5, &base_stn_dest_addr[0] , "AQUA Fish tank level check failed", 33, &value[0], 0);
+							vTaskDelay(MAX_WAIT_FOR_RESP / portTICK_PERIOD_MS );
+							if(xbee_flag & TX_OK) 
+							{
+								xbee_flag &= (~TX_OK);
+								break;
+							}
+					}
+				}
+				else
+				{
+					printf("AQUA Fish tank level = %d cm\r\n", ret_val);
+					
+					convert_to_ascii(ret_val, &value[0]);
+					for(count = 0; count < MAX_RETRY; count++)
+					{
+							xbee_tx(&huart5, &base_stn_dest_addr[0] , "AQUA Fish tank level in cm = ", 29, &value[0], 3);
+							vTaskDelay(MAX_WAIT_FOR_RESP / portTICK_PERIOD_MS );
+							if(xbee_flag & TX_OK) 
+							{
+								xbee_flag &= (~TX_OK);
+								break;
+							}
+					}
+				}
+				xSemaphoreGive(xSemaphore_send_log);
+			}			
+			
+			sys_stat &= (~SYS_STAT_AQUA_CHECKING_FISH_TANK);
+		}
+	}
+}
 

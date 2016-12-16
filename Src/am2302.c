@@ -3,6 +3,7 @@
 #include "cmsis_os.h"
 #include "am2302.h"
 #include "main.h"
+#include "util_func.h"
 
 extern TIM_HandleTypeDef htim2;
 
@@ -136,26 +137,4 @@ void Reinit_SW_Pin(GPIO_TypeDef* swp_port, uint16_t swp_pin, uint8_t IO)
 	}		
 }
 
-void timer_uS_start(uint32_t period) 
-{
-  htim2.Init.Period = period;
-  if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
-  {
-    //Error_Handler();
-  }	
-	HAL_TIM_Base_Start(&htim2);
-	CLEAR_BIT(htim2.Instance->SR, TIM_SR_UIF);
-}
 
-void timer_uS_stop(void) 
-{
-		HAL_TIM_Base_Stop(&htim2);
-}
-
-void timer_delay_uS(uint32_t uS)
-{
-  timer_uS_start(uS * period_1uS);	
-	while(!(READ_BIT(htim2.Instance->SR, TIM_SR_UIF)));
-	__HAL_TIM_CLEAR_IT(&htim2, TIM_IT_UPDATE);
-	timer_uS_stop();	
-}

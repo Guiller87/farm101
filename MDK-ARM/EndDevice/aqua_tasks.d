@@ -1,7 +1,7 @@
 enddevice\aqua_tasks.o: ..\Src\aqua_tasks.c
+enddevice\aqua_tasks.o: ../Inc/main.h
 enddevice\aqua_tasks.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h
 enddevice\aqua_tasks.o: ../Inc/stm32l4xx_hal_conf.h
-enddevice\aqua_tasks.o: ../Inc/main.h
 enddevice\aqua_tasks.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h
 enddevice\aqua_tasks.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h
 enddevice\aqua_tasks.o: ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h
@@ -54,9 +54,10 @@ enddevice\aqua_tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timer
 enddevice\aqua_tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 enddevice\aqua_tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 enddevice\aqua_tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
-enddevice\aqua_tasks.o: ..\Src\aqua_tasks.h
-enddevice\aqua_tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
-enddevice\aqua_tasks.o: ../Drivers/CMSIS/Include/core_cmFunc.h
 enddevice\aqua_tasks.o: ..\Src\printf_mod.h
-enddevice\aqua_tasks.o: ..\Src\am2302.h
 enddevice\aqua_tasks.o: ..\Src\xbee_test.h
+enddevice\aqua_tasks.o: ..\Src\aqua_tasks.h
+enddevice\aqua_tasks.o: ..\Src\util_func.h
+enddevice\aqua_tasks.o: ..\Src\water_pump.h
+enddevice\aqua_tasks.o: ..\Src\water_flow.h
+enddevice\aqua_tasks.o: ..\Src\ultrasonic.h

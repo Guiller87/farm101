@@ -55,3 +55,4 @@ enddevice\am2302.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 enddevice\am2302.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 enddevice\am2302.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 enddevice\am2302.o: ..\Src\am2302.h
+enddevice\am2302.o: ..\Src\util_func.h

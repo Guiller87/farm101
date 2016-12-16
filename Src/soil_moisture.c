@@ -20,7 +20,7 @@ uint32_t read_soil_moisture(ADC_HandleTypeDef hadc, uint32_t ADC_channel, uint8_
 	
 		HAL_ADC_Start(&hadc);
 	
-	  for(i = 0; i > samples; i++) {
+	  for(i = 0; i < samples; i++) {
 				HAL_ADC_PollForConversion(&hadc, 1000);
 				value += HAL_ADC_GetValue(&hadc);			
 		}

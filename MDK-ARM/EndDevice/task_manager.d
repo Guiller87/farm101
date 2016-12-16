@@ -62,3 +62,4 @@ enddevice\task_manager.o: ..\Src\water_flow.h
 enddevice\task_manager.o: ..\Src\am2302.h
 enddevice\task_manager.o: ..\Src\soil_moisture.h
 enddevice\task_manager.o: ..\Src\xbee_test.h
+enddevice\task_manager.o: ..\Src\ultrasonic.h

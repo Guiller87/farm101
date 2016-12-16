@@ -39,4 +39,4 @@ enddevice\ultrasonic.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex
 enddevice\ultrasonic.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h
 enddevice\ultrasonic.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h
 enddevice\ultrasonic.o: ..\Src\ultrasonic.h
-enddevice\ultrasonic.o: ..\Src\am2302.h
+enddevice\ultrasonic.o: ..\Src\util_func.h

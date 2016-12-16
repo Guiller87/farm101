@@ -3,30 +3,36 @@
 #include "util_func.h"
 #include "cmsis_os.h"
 
+#define DEBUG_MODE 0 // or quick alarm. alarm set to 3 seconds later
+
 extern void MX_RTC_Init(void);
 extern RTC_HandleTypeDef hrtc;
 extern uint8_t sys_stat;
 
+extern UART_HandleTypeDef huart5;
+extern TIM_HandleTypeDef htim2;
+
 extern uint8_t debug_rx_buf[DEBUG_RX_BUF_SIZE];
-extern SemaphoreHandle_t xSemaphore_printf;
+extern SemaphoreHandle_t xSemaphore_send_log;
 extern QueueHandle_t xQueue_debug_parse_data_rx;
+extern uint8_t base_stn_dest_addr[];
 
-
-void print_timestamp(void) // caller of this function should not take xSemaphore_printf
+void print_timestamp(void) // caller of this function should not take xSemaphore_send_log
 {
-		RTC_TimeTypeDef time;
-		RTC_DateTypeDef date;
+	RTC_TimeTypeDef time;
+	RTC_DateTypeDef date;
 	
-		HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
-		HAL_RTC_GetDate(&hrtc, &date, RTC_FORMAT_BIN);
-		if(xSemaphoreTake(xSemaphore_printf, 1000))
-		{
-			printf("TIME is = %d:%d:%d   ", time.Hours, time.Minutes, time.Seconds);
-			printf("DATE is = %d/%d/%d \r\n", date.Month, date.Date, date.Year);
-			xSemaphoreGive(xSemaphore_printf);
-		}
+	uint8_t value[3] = {0};
+	
+	HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
+	HAL_RTC_GetDate(&hrtc, &date, RTC_FORMAT_BIN);
+	if(xSemaphoreTake(xSemaphore_send_log, 10000))
+	{
+		printf("TIME = %d:%d:%d   ", time.Hours, time.Minutes, time.Seconds);
+		printf("DATE = %d/%d/%d \r\n", date.Month, date.Date, date.Year);
+		xSemaphoreGive(xSemaphore_send_log);
+	}
 }
-
 
 void debug_parse_data_rx( void * pvParameters )
 {
@@ -43,19 +49,19 @@ void debug_parse_data_rx( void * pvParameters )
 					{
 						case DEBUG_CMD_START_RTC:
 							MX_RTC_Init();
-							if(xSemaphoreTake(xSemaphore_printf, 5000))
+							if(xSemaphoreTake(xSemaphore_send_log, 10000))
 							{
 								printf("RTC Initialized!\r\n");
-								xSemaphoreGive(xSemaphore_printf);
+								xSemaphoreGive(xSemaphore_send_log);
 								break;
 							}
 							break;
 							
 						case DEBUG_CMD_SET_RTC:
-							if(xSemaphoreTake(xSemaphore_printf, 5000))
+							if(xSemaphoreTake(xSemaphore_send_log, 10000))
 							{
 								printf("Set RTC command received\r\n");
-								xSemaphoreGive(xSemaphore_printf);
+								xSemaphoreGive(xSemaphore_send_log);
 							}
 
 							date.Date = debug_rx_buf[DEBUG_IDX_DATA] ;
@@ -64,33 +70,43 @@ void debug_parse_data_rx( void * pvParameters )
 							time.Hours = debug_rx_buf[DEBUG_IDX_DATA + 3];
 							time.Minutes = debug_rx_buf[DEBUG_IDX_DATA + 4];
 							time.Seconds = debug_rx_buf[DEBUG_IDX_DATA + 5];
-						
+							time.TimeFormat = RTC_HOURFORMAT12_AM;
+							time.SubSeconds = 0;
+							time.SecondFraction = 0;
+							
 							if (HAL_RTC_SetTime(&hrtc, &time, RTC_FORMAT_BIN) != HAL_OK)
 							{
-								if(xSemaphoreTake(xSemaphore_printf, 5000))
+								if(xSemaphoreTake(xSemaphore_send_log, 10000))
 								{
 									printf("Failed...\r\n");
-									xSemaphoreGive(xSemaphore_printf);
+									xSemaphoreGive(xSemaphore_send_log);
 									break;
 								}
 							}
 							if (HAL_RTC_SetDate(&hrtc, &date, RTC_FORMAT_BIN) != HAL_OK)
 							{
-								if(xSemaphoreTake(xSemaphore_printf, 5000))
+								if(xSemaphoreTake(xSemaphore_send_log, 10000))
 								{
 									printf("Failed...\r\n");
-									xSemaphoreGive(xSemaphore_printf);
+									xSemaphoreGive(xSemaphore_send_log);
 									break;
 								}
 							}
 							//set alarm on on the next minute
-							set_RTC_alarm (SYS_RTC_ALARM_MIN);
+							if(DEBUG_MODE)
+							{
+							   set_RTC_alarm_DEBUG();
+							}
+							else
+							{
+								set_RTC_alarm (SYS_RTC_ALARM_MIN);
+							}
 							print_timestamp();
 							
-							if(xSemaphoreTake(xSemaphore_printf, 5000))
+							if(xSemaphoreTake(xSemaphore_send_log, 10000))
 							{							
 								printf("RTC set time successful! Alarm set every %d minutes\r\n", SYS_RTC_ALARM_MIN);
-								xSemaphoreGive(xSemaphore_printf);
+								xSemaphoreGive(xSemaphore_send_log);
 								break;
 							}
 							break;
@@ -99,19 +115,19 @@ void debug_parse_data_rx( void * pvParameters )
 							//break;
 							
 						case DEBUG_CMD_GET_TIME:
-							if(xSemaphoreTake(xSemaphore_printf, 5000))
+							if(xSemaphoreTake(xSemaphore_send_log, 10000))
 							{
 								printf("Get Time command received\r\n");
-								xSemaphoreGive(xSemaphore_printf);
+								xSemaphoreGive(xSemaphore_send_log);
 							}						
 							print_timestamp();
 							break;
 							
 						default:
-							if(xSemaphoreTake(xSemaphore_printf, 5000))
+							if(xSemaphoreTake(xSemaphore_send_log, 10000))
 							{
 								printf("Invalid command header = %d", debug_rx_buf[DEBUG_IDX_CMD]);
-								xSemaphoreGive(xSemaphore_printf);
+								xSemaphoreGive(xSemaphore_send_log);
 								break;
 							}
 							break;
@@ -150,10 +166,47 @@ void set_RTC_alarm (uint8_t alrm_next_xminutes)
 		
 		if (HAL_RTC_SetAlarm_IT(&hrtc, &next_alarm, RTC_FORMAT_BIN) != HAL_OK)
 		{
-			if(xSemaphoreTake(xSemaphore_printf, 5000))
+			if(xSemaphoreTake(xSemaphore_send_log, 10000))
 			{
 				printf("Setting next alarm failed.");
-				xSemaphoreGive(xSemaphore_printf);
+				xSemaphoreGive(xSemaphore_send_log);
+			}
+		}
+}
+
+void set_RTC_alarm_DEBUG (void)
+{
+		uint8_t buf;
+		uint32_t value;
+		RTC_TimeTypeDef time;
+		RTC_DateTypeDef date;
+		RTC_AlarmTypeDef next_alarm;
+	
+		HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
+		HAL_RTC_GetDate(&hrtc, &date, RTC_FORMAT_BIN);
+	
+		time.Seconds += 3;
+
+		correct_rtc_values(&time.Hours, &time.Minutes, &time.Seconds, &date.Month, &date.Date, &date.Year, RTC_FORMAT_BIN);
+		
+		next_alarm.AlarmTime.Hours = time.Hours;
+		next_alarm.AlarmTime.Minutes = time.Minutes;
+		next_alarm.AlarmTime.Seconds = time.Seconds;
+		next_alarm.AlarmTime.SubSeconds = 0x0;
+		next_alarm.AlarmTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
+		next_alarm.AlarmTime.StoreOperation = RTC_STOREOPERATION_RESET;
+		next_alarm.AlarmMask = RTC_ALARMMASK_NONE;
+		next_alarm.AlarmSubSecondMask = RTC_ALARMSUBSECONDMASK_ALL;
+		next_alarm.AlarmDateWeekDaySel = RTC_ALARMDATEWEEKDAYSEL_DATE;
+		next_alarm.AlarmDateWeekDay = date.Date;
+		next_alarm.Alarm = RTC_ALARM_A;
+		
+		if (HAL_RTC_SetAlarm_IT(&hrtc, &next_alarm, RTC_FORMAT_BIN) != HAL_OK)
+		{
+			if(xSemaphoreTake(xSemaphore_send_log, 10000))
+			{
+				printf("Setting next alarm failed.");
+				xSemaphoreGive(xSemaphore_send_log);
 			}
 		}
 }
@@ -261,35 +314,63 @@ void status_led_task ( void * pvParameters )
 {
 	while(1)
 	{
-			switch(sys_stat)
-			{
-				case SYS_STAT_RUNTIME_OK:
-						HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
-						vTaskDelay(100 / portTICK_PERIOD_MS );
-						HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
-						vTaskDelay(2000 / portTICK_PERIOD_MS );
-						break;
+		switch(sys_stat)
+		{
+			case SYS_STAT_IDLE:
+				HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+				vTaskDelay(100 / portTICK_PERIOD_MS );
+				HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+				vTaskDelay(2000 / portTICK_PERIOD_MS );
+				break;
 
-				case SYS_STAT_RUNTIME_NOK:
-						HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-						vTaskDelay(200 / portTICK_PERIOD_MS );
-						break;
-
-				case SYS_STAT_BUSY:
-						HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
-						vTaskDelay(2000 / portTICK_PERIOD_MS );
-						HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
-						vTaskDelay(100 / portTICK_PERIOD_MS );
-						break;						
-
-				default:
-						HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-						vTaskDelay(200 / portTICK_PERIOD_MS );
-						break;
-			}
+			default:
+				HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+				vTaskDelay(200 / portTICK_PERIOD_MS );
+				break;
+		}
 	}
 }
 
-
-
+void convert_to_ascii(uint32_t number, uint8_t* output)//, uint8_t* hun, uint8_t* ten, uint8_t* ones)
+{
+	uint8_t hun, ten, ones = 0;
 	
+	hun = number / 100;	
+	ones = number % 10;
+	number = number - ones;
+	ten = (number % 100) / 10;
+	
+	hun += 0x30;
+	ten += 0x30;
+	ones += 0x30;
+	
+	*output++ = hun;
+  *output++ = ten;
+	*output = ones;
+}
+
+void timer_uS_start(uint32_t period) 
+{
+  htim2.Init.Period = period;
+  if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
+  {
+    //Error_Handler();
+  }	
+	//HAL_TIM_Base_Start(&htim2); //orig code
+	HAL_TIM_Base_Start_IT(&htim2);
+	CLEAR_BIT(htim2.Instance->SR, TIM_SR_UIF);
+}
+
+void timer_uS_stop(void) 
+{
+	//HAL_TIM_Base_Stop(&htim2); //orig code
+	HAL_TIM_Base_Stop_IT(&htim2);
+}
+
+void timer_delay_uS(uint32_t uS)
+{
+  timer_uS_start(uS * period_1uS);	
+	while(!(READ_BIT(htim2.Instance->SR, TIM_SR_UIF)));
+	__HAL_TIM_CLEAR_IT(&htim2, TIM_IT_UPDATE);
+	timer_uS_stop();	
+}

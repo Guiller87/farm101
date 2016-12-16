@@ -1,10 +1,10 @@
 Dependencies for Project 'EndDevice', Target 'EndDevice': (DO NOT MODIFY !)
 F (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/port.c)(0x57A46183)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\port.o --omf_browse enddevice\port.crf --depend enddevice\port.d)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5850E21C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AFD6F2)
-I (../Inc/FreeRTOSConfig.h)(0x58433AB6)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/FreeRTOSConfig.h)(0x584FA6C7)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
@@ -14,11 +14,11 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x57A46183)
 F (../Middlewares/Third_Party/FreeRTOS/Source/timers.c)(0x57A46183)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\timers.o --omf_browse enddevice\timers.crf --depend enddevice\timers.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55AFD6F2)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5850E21C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AFD6F2)
-I (../Inc/FreeRTOSConfig.h)(0x58433AB6)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/FreeRTOSConfig.h)(0x584FA6C7)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
@@ -28,13 +28,26 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x57A46183)
-F (../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c)(0x57A46183)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\event_groups.o --omf_browse enddevice\event_groups.crf --depend enddevice\event_groups.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/list.c)(0x57A46183)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\list.o --omf_browse enddevice\list.crf --depend enddevice\list.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55AFD6F2)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5850E21C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AFD6F2)
-I (../Inc/FreeRTOSConfig.h)(0x58433AB6)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/FreeRTOSConfig.h)(0x584FA6C7)
+I (../Inc/main.h)(0x584FA6F9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x57A46183)
+F (../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c)(0x57A46183)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\event_groups.o --omf_browse enddevice\event_groups.crf --depend enddevice\event_groups.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55AFD6F2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5850E21C)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AFD6F2)
+I (../Inc/FreeRTOSConfig.h)(0x584FA6C7)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
@@ -44,27 +57,14 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x57A46183)
-F (../Middlewares/Third_Party/FreeRTOS/Source/list.c)(0x57A46183)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\list.o --omf_browse enddevice\list.crf --depend enddevice\list.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55AFD6F2)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x57A46183)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AFD6F2)
-I (../Inc/FreeRTOSConfig.h)(0x58433AB6)
-I (../Inc/main.h)(0x584C5DA0)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x57A46183)
 F (../Middlewares/Third_Party/FreeRTOS/Source/queue.c)(0x57A46183)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\queue.o --omf_browse enddevice\queue.crf --depend enddevice\queue.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55AFD6F2)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55AFD6F2)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5850E21C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AFD6F2)
-I (../Inc/FreeRTOSConfig.h)(0x58433AB6)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/FreeRTOSConfig.h)(0x584FA6C7)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
@@ -76,11 +76,11 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x57A46183)
 F (../Middlewares/Third_Party/FreeRTOS/Source/tasks.c)(0x57A46183)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\tasks.o --omf_browse enddevice\tasks.crf --depend enddevice\tasks.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55AFD6F2)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55AFD6F2)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5850E21C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AFD6F2)
-I (../Inc/FreeRTOSConfig.h)(0x58433AB6)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/FreeRTOSConfig.h)(0x584FA6C7)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
@@ -90,20 +90,6 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/StackMacros.h)(0x57A46183)
-F (../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c)(0x57A46183)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\heap_4.o --omf_browse enddevice\heap_4.crf --depend enddevice\heap_4.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55AFD6F2)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x57A46183)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AFD6F2)
-I (../Inc/FreeRTOSConfig.h)(0x58433AB6)
-I (../Inc/main.h)(0x584C5DA0)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x57A46183)
 F (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c)(0x57A46183)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\cmsis_os.o --omf_browse enddevice\cmsis_os.crf --depend enddevice\cmsis_os.d)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55AFD6F2)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x57A46183)
@@ -111,9 +97,9 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AFD6F2)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
 I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x57A46172)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x57A46172)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x57A46183)
-I (../Inc/FreeRTOSConfig.h)(0x58433AB6)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5850E21C)
+I (../Inc/FreeRTOSConfig.h)(0x584FA6C7)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
@@ -126,11 +112,11 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x57A46183)
 F (../Middlewares/Third_Party/FreeRTOS/Source/croutine.c)(0x57A46183)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\croutine.o --omf_browse enddevice\croutine.crf --depend enddevice\croutine.d)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5850E21C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AFD6F2)
-I (../Inc/FreeRTOSConfig.h)(0x58433AB6)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/FreeRTOSConfig.h)(0x584FA6C7)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
@@ -139,11 +125,25 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x57A46183
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h)(0x57A46183)
-F (startup_stm32l476xx.s)(0x58433B21)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1" -I..\Inc-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include--pd "__UVISION_VERSION SETA 516" --pd "_RTE_ SETA 1" --pd "STM32L476xx SETA 1"--list startup_stm32l476xx.lst --xref -o enddevice\startup_stm32l476xx.o --depend enddevice\startup_stm32l476xx.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_1.c)(0x57A46183)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\heap_1.o --omf_browse enddevice\heap_1.crf --depend enddevice\heap_1.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55AFD6F2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5850E21C)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AFD6F2)
+I (../Inc/FreeRTOSConfig.h)(0x584FA6C7)
+I (../Inc/main.h)(0x584FA6F9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x57A46183)
+F (startup_stm32l476xx.s)(0x584FA708)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1" -I..\Inc-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include--pd "__UVISION_VERSION SETA 516" --pd "_RTE_ SETA 1" --pd "STM32L476xx SETA 1"--list startup_stm32l476xx.lst --xref -o enddevice\startup_stm32l476xx.o --depend enddevice\startup_stm32l476xx.d)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_adc_ex.c)(0x583009A9)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_adc_ex.o --omf_browse enddevice\stm32l4xx_hal_adc_ex.crf --depend enddevice\stm32l4xx_hal_adc_ex.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -181,8 +181,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c)(0x583009AA)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_rcc.o --omf_browse enddevice\stm32l4xx_hal_rcc.crf --depend enddevice\stm32l4xx_hal_rcc.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -220,8 +220,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c)(0x583009A9)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_i2c.o --omf_browse enddevice\stm32l4xx_hal_i2c.crf --depend enddevice\stm32l4xx_hal_i2c.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -259,8 +259,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.c)(0x583009A9)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_flash.o --omf_browse enddevice\stm32l4xx_hal_flash.crf --depend enddevice\stm32l4xx_hal_flash.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -298,8 +298,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c)(0x583009A9)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_pwr_ex.o --omf_browse enddevice\stm32l4xx_hal_pwr_ex.crf --depend enddevice\stm32l4xx_hal_pwr_ex.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -337,8 +337,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_adc.c)(0x583009A9)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_adc.o --omf_browse enddevice\stm32l4xx_hal_adc.crf --depend enddevice\stm32l4xx_hal_adc.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -376,8 +376,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c)(0x583009A9)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_cortex.o --omf_browse enddevice\stm32l4xx_hal_cortex.crf --depend enddevice\stm32l4xx_hal_cortex.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -415,8 +415,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi.c)(0x583009AA)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_spi.o --omf_browse enddevice\stm32l4xx_hal_spi.crf --depend enddevice\stm32l4xx_hal_spi.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -454,8 +454,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi_ex.c)(0x583009AA)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_spi_ex.o --omf_browse enddevice\stm32l4xx_hal_spi_ex.crf --depend enddevice\stm32l4xx_hal_spi_ex.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -493,8 +493,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c)(0x583009AA)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_tim_ex.o --omf_browse enddevice\stm32l4xx_hal_tim_ex.crf --depend enddevice\stm32l4xx_hal_tim_ex.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -532,8 +532,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c)(0x583009A9)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_gpio.o --omf_browse enddevice\stm32l4xx_hal_gpio.crf --depend enddevice\stm32l4xx_hal_gpio.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -571,8 +571,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c)(0x583009AA)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_rcc_ex.o --omf_browse enddevice\stm32l4xx_hal_rcc_ex.crf --depend enddevice\stm32l4xx_hal_rcc_ex.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -610,8 +610,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c)(0x583009A9)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_dma.o --omf_browse enddevice\stm32l4xx_hal_dma.crf --depend enddevice\stm32l4xx_hal_dma.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -649,8 +649,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c)(0x583009AA)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_tim.o --omf_browse enddevice\stm32l4xx_hal_tim.crf --depend enddevice\stm32l4xx_hal_tim.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -688,8 +688,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c)(0x583009A9)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_flash_ramfunc.o --omf_browse enddevice\stm32l4xx_hal_flash_ramfunc.crf --depend enddevice\stm32l4xx_hal_flash_ramfunc.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -727,8 +727,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c)(0x583009A9)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_pwr.o --omf_browse enddevice\stm32l4xx_hal_pwr.crf --depend enddevice\stm32l4xx_hal_pwr.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -764,10 +764,10 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
-F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rtc.c)(0x58433BB1)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_rtc.o --omf_browse enddevice\stm32l4xx_hal_rtc.crf --depend enddevice\stm32l4xx_hal_rtc.d)
+F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rtc.c)(0x584FA74D)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_rtc.o --omf_browse enddevice\stm32l4xx_hal_rtc.crf --depend enddevice\stm32l4xx_hal_rtc.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -805,8 +805,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c)(0x583009AA)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_uart_ex.o --omf_browse enddevice\stm32l4xx_hal_uart_ex.crf --depend enddevice\stm32l4xx_hal_uart_ex.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -844,8 +844,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c)(0x583009A9)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_i2c_ex.o --omf_browse enddevice\stm32l4xx_hal_i2c_ex.crf --depend enddevice\stm32l4xx_hal_i2c_ex.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -883,8 +883,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rtc_ex.c)(0x583009AA)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_rtc_ex.o --omf_browse enddevice\stm32l4xx_hal_rtc_ex.crf --depend enddevice\stm32l4xx_hal_rtc_ex.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -922,8 +922,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c)(0x583009AA)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_uart.o --omf_browse enddevice\stm32l4xx_hal_uart.crf --depend enddevice\stm32l4xx_hal_uart.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -961,8 +961,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c)(0x583009A9)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_flash_ex.o --omf_browse enddevice\stm32l4xx_hal_flash_ex.crf --depend enddevice\stm32l4xx_hal_flash_ex.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -1000,8 +1000,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c)(0x583009A9)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal.o --omf_browse enddevice\stm32l4xx_hal.crf --depend enddevice\stm32l4xx_hal.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -1048,8 +1048,8 @@ I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x57A46172)
 I (../Drivers/CMSIS/Include/core_cmSimd.h)(0x57A46172)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h)(0x583009A8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x583009A9)
@@ -1076,10 +1076,10 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
-F (../Src/stm32l4xx_hal_timebase_TIM.c)(0x58433B0B)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_timebase_tim.o --omf_browse enddevice\stm32l4xx_hal_timebase_tim.crf --depend enddevice\stm32l4xx_hal_timebase_tim.d)
+F (../Src/stm32l4xx_hal_timebase_TIM.c)(0x584FA6F8)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_timebase_tim.o --omf_browse enddevice\stm32l4xx_hal_timebase_tim.crf --depend enddevice\stm32l4xx_hal_timebase_tim.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -1115,12 +1115,12 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
-F (../Src/freertos.c)(0x58433AB7)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\freertos.o --omf_browse enddevice\freertos.crf --depend enddevice\freertos.d)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x57A46183)
+F (../Src/freertos.c)(0x584FA6C7)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\freertos.o --omf_browse enddevice\freertos.crf --depend enddevice\freertos.d)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5850E21C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AFD6F2)
-I (../Inc/FreeRTOSConfig.h)(0x58433AB6)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/FreeRTOSConfig.h)(0x584FA6C7)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
@@ -1128,10 +1128,10 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x57A46183)
-F (../Src/stm32l4xx_it.c)(0x58433B06)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_it.o --omf_browse enddevice\stm32l4xx_it.crf --depend enddevice\stm32l4xx_it.d)
+F (../Src/stm32l4xx_it.c)(0x584FA6F6)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_it.o --omf_browse enddevice\stm32l4xx_it.crf --depend enddevice\stm32l4xx_it.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -1167,11 +1167,11 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
-I (../Inc/stm32l4xx_it.h)(0x58433B06)
+I (../Inc/stm32l4xx_it.h)(0x584FA6F6)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x57A46183)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x57A46183)
-I (../Inc/FreeRTOSConfig.h)(0x58433AB6)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5850E21C)
+I (../Inc/FreeRTOSConfig.h)(0x584FA6C7)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
@@ -1184,10 +1184,10 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x57A46183)
 I (../Src/printf_mod.h)(0x57AC4325)
-F (../Src/stm32l4xx_hal_msp.c)(0x58433B0A)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_msp.o --omf_browse enddevice\stm32l4xx_hal_msp.crf --depend enddevice\stm32l4xx_hal_msp.d)
+F (../Src/stm32l4xx_hal_msp.c)(0x584FA6F8)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\stm32l4xx_hal_msp.o --omf_browse enddevice\stm32l4xx_hal_msp.crf --depend enddevice\stm32l4xx_hal_msp.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -1225,8 +1225,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 F (..\Src\water_pump.c)(0x583242D7)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\water_pump.o --omf_browse enddevice\water_pump.crf --depend enddevice\water_pump.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -1263,10 +1263,10 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 I (..\Src\water_pump.h)(0x5830BA79)
-F (../Src/main.c)(0x584D3CEB)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\main.o --omf_browse enddevice\main.crf --depend enddevice\main.d)
-I (../Inc/main.h)(0x584C5DA0)
+F (../Src/main.c)(0x5851047C)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\main.o --omf_browse enddevice\main.crf --depend enddevice\main.d)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -1304,8 +1304,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x57A46183)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x57A46183)
-I (../Inc/FreeRTOSConfig.h)(0x58433AB6)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5850E21C)
+I (../Inc/FreeRTOSConfig.h)(0x584FA6C7)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
@@ -1317,19 +1317,19 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x57A46183)
-I (../Src/aqua_tasks.h)(0x58281B31)
+I (../Src/aqua_tasks.h)(0x584E339A)
 I (../Src/printf_mod.h)(0x57AC4325)
-I (../Src/am2302.h)(0x583BE518)
-I (../Inc/stm32l4xx_it.h)(0x58433B06)
-I (../Src/util_func.h)(0x584C5DA0)
+I (../Src/am2302.h)(0x584FBDDE)
+I (../Inc/stm32l4xx_it.h)(0x584FA6F6)
+I (../Src/util_func.h)(0x5850E21C)
 I (../Src/task_manager.h)(0x583258AC)
 I (../Src/garden_tasks.h)(0x583FCFA4)
-I (../Src/xbee_test.h)(0x584D3CEB)
+I (../Src/xbee_test.h)(0x584E2E25)
 I (../Src/soil_moisture.h)(0x583FCA87)
-F (..\Src\aqua_tasks.c)(0x5844A97D)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\aqua_tasks.o --omf_browse enddevice\aqua_tasks.crf --depend enddevice\aqua_tasks.d)
+F (..\Src\aqua_tasks.c)(0x5850ECCD)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\aqua_tasks.o --omf_browse enddevice\aqua_tasks.crf --depend enddevice\aqua_tasks.d)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -1367,8 +1367,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x57A46183)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x57A46183)
-I (../Inc/FreeRTOSConfig.h)(0x58433AB6)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5850E21C)
+I (../Inc/FreeRTOSConfig.h)(0x584FA6C7)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
@@ -1380,136 +1380,140 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x57A46183)
-I (..\Src\aqua_tasks.h)(0x58281B31)
 I (..\Src\printf_mod.h)(0x57AC4325)
-I (..\Src\am2302.h)(0x583BE518)
-I (..\Src\xbee_test.h)(0x584D3CEB)
-F (..\Src\util_func.c)(0x584D20E6)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\util_func.o --omf_browse enddevice\util_func.crf --depend enddevice\util_func.d)
-I (../Inc/main.h)(0x584C5DA0)
-I (..\Src\util_func.h)(0x584C5DA0)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h)(0x583009A8)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x57A46172)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AFD6F2)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x57A46172)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x57A46172)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x57A46172)
-I (../Drivers/CMSIS/Include/core_cmSimd.h)(0x57A46172)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h)(0x583009A8)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x583009A9)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57AC42B7)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc_ex.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c_ex.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc_ex.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
-I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x57A46183)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x57A46183)
-I (../Inc/FreeRTOSConfig.h)(0x58433AB6)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x57A46183)
-F (..\Src\task_manager.c)(0x584D3CEB)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\task_manager.o --omf_browse enddevice\task_manager.crf --depend enddevice\task_manager.d)
-I (../Inc/main.h)(0x584C5DA0)
-I (..\Src\task_manager.h)(0x583258AC)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h)(0x583009A8)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x57A46172)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AFD6F2)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x57A46172)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x57A46172)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x57A46172)
-I (../Drivers/CMSIS/Include/core_cmSimd.h)(0x57A46172)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h)(0x583009A8)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x583009A9)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57AC42B7)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc_ex.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c_ex.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc_ex.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
-I (..\Src\task_schedules.h)(0x5830DD02)
-I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x57A46183)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x57A46183)
-I (../Inc/FreeRTOSConfig.h)(0x58433AB6)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x57A46183)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x57A46183)
-I (..\Src\util_func.h)(0x584C5DA0)
+I (..\Src\xbee_test.h)(0x584E2E25)
+I (..\Src\aqua_tasks.h)(0x584E339A)
+I (..\Src\util_func.h)(0x5850E21C)
 I (..\Src\water_pump.h)(0x5830BA79)
 I (..\Src\water_flow.h)(0x58393B83)
-I (..\Src\am2302.h)(0x583BE518)
+I (..\Src\ultrasonic.h)(0x5850FF0F)
+F (..\Src\util_func.c)(0x58510A74)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\util_func.o --omf_browse enddevice\util_func.crf --depend enddevice\util_func.d)
+I (../Inc/main.h)(0x584FA6F9)
+I (..\Src\util_func.h)(0x5850E21C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h)(0x583009A8)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x57A46172)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AFD6F2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x57A46172)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x57A46172)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x57A46172)
+I (../Drivers/CMSIS/Include/core_cmSimd.h)(0x57A46172)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h)(0x583009A8)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x583009A9)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57AC42B7)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc_ex.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c_ex.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc_ex.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x57A46183)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5850E21C)
+I (../Inc/FreeRTOSConfig.h)(0x584FA6C7)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x57A46183)
+F (..\Src\task_manager.c)(0x585101E4)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\task_manager.o --omf_browse enddevice\task_manager.crf --depend enddevice\task_manager.d)
+I (../Inc/main.h)(0x584FA6F9)
+I (..\Src\task_manager.h)(0x583258AC)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h)(0x583009A8)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x57A46172)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AFD6F2)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x57A46172)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x57A46172)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x57A46172)
+I (../Drivers/CMSIS/Include/core_cmSimd.h)(0x57A46172)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h)(0x583009A8)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x583009A9)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57AC42B7)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc_ex.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c_ex.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc_ex.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
+I (..\Src\task_schedules.h)(0x584E3DA8)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x57A46183)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5850E21C)
+I (../Inc/FreeRTOSConfig.h)(0x584FA6C7)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x57A46183)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x57A46183)
+I (..\Src\util_func.h)(0x5850E21C)
+I (..\Src\water_pump.h)(0x5830BA79)
+I (..\Src\water_flow.h)(0x58393B83)
+I (..\Src\am2302.h)(0x584FBDDE)
 I (..\Src\soil_moisture.h)(0x583FCA87)
-I (..\Src\xbee_test.h)(0x584D3CEB)
-F (..\Src\garden_tasks.c)(0x584D42C1)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\garden_tasks.o --omf_browse enddevice\garden_tasks.crf --depend enddevice\garden_tasks.d)
-I (../Inc/main.h)(0x584C5DA0)
+I (..\Src\xbee_test.h)(0x584E2E25)
+I (..\Src\ultrasonic.h)(0x5850FF0F)
+F (..\Src\garden_tasks.c)(0x58538668)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\garden_tasks.o --omf_browse enddevice\garden_tasks.crf --depend enddevice\garden_tasks.d)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x57A46183)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AFD6F2)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
 I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x57A46172)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x57A46172)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x57A46183)
-I (../Inc/FreeRTOSConfig.h)(0x58433AB6)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5850E21C)
+I (../Inc/FreeRTOSConfig.h)(0x584FA6C7)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
@@ -1523,7 +1527,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x57A46183)
 I (..\Src\water_pump.h)(0x5830BA79)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -1558,15 +1562,15 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 I (..\Src\water_flow.h)(0x58393B83)
 I (..\Src\garden_tasks.h)(0x583FCFA4)
-I (..\Src\util_func.h)(0x584C5DA0)
-I (..\Src\am2302.h)(0x583BE518)
+I (..\Src\util_func.h)(0x5850E21C)
+I (..\Src\am2302.h)(0x584FBDDE)
 I (..\Src\soil_moisture.h)(0x583FCA87)
-I (..\Src\ultrasonic.h)(0x58434232)
-I (..\Src\xbee_test.h)(0x584D3CEB)
-F (..\Src\water_flow.c)(0x583A1446)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\water_flow.o --omf_browse enddevice\water_flow.crf --depend enddevice\water_flow.d)
+I (..\Src\ultrasonic.h)(0x5850FF0F)
+I (..\Src\xbee_test.h)(0x584E2E25)
+F (..\Src\water_flow.c)(0x584DCD3A)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\water_flow.o --omf_browse enddevice\water_flow.crf --depend enddevice\water_flow.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -1605,8 +1609,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 I (..\Src\water_flow.h)(0x58393B83)
 F (..\Src\xbee_test.c)(0x584D40AD)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\xbee_test.o --omf_browse enddevice\xbee_test.crf --depend enddevice\xbee_test.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -1644,8 +1648,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x57A46183)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x57A46183)
-I (../Inc/FreeRTOSConfig.h)(0x58433AB6)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5850E21C)
+I (../Inc/FreeRTOSConfig.h)(0x584FA6C7)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
@@ -1658,12 +1662,12 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x57A46183)
 I (..\Src\printf_mod.h)(0x57AC4325)
-I (..\Src\xbee_test.h)(0x584D3CEB)
-I (..\Src\util_func.h)(0x584C5DA0)
-F (..\Src\am2302.c)(0x583E8599)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\am2302.o --omf_browse enddevice\am2302.crf --depend enddevice\am2302.d)
+I (..\Src\xbee_test.h)(0x584E2E25)
+I (..\Src\util_func.h)(0x5850E21C)
+F (..\Src\am2302.c)(0x584FBDDE)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\am2302.o --omf_browse enddevice\am2302.crf --depend enddevice\am2302.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -1701,8 +1705,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x57A46183)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFD6F2)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x57A46183)
-I (../Inc/FreeRTOSConfig.h)(0x58433AB6)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5850E21C)
+I (../Inc/FreeRTOSConfig.h)(0x584FA6C7)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x57A46183)
@@ -1714,11 +1718,12 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x57A46183)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x57A46183)
-I (..\Src\am2302.h)(0x583BE518)
-F (..\Src\soil_moisture.c)(0x583FCB0C)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\soil_moisture.o --omf_browse enddevice\soil_moisture.crf --depend enddevice\soil_moisture.d)
+I (..\Src\am2302.h)(0x584FBDDE)
+I (..\Src\util_func.h)(0x5850E21C)
+F (..\Src\soil_moisture.c)(0x5851073E)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\soil_moisture.o --omf_browse enddevice\soil_moisture.crf --depend enddevice\soil_moisture.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -1755,10 +1760,10 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
 I (..\Src\soil_moisture.h)(0x583FCA87)
-F (..\Src\ultrasonic.c)(0x5843419B)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\ultrasonic.o --omf_browse enddevice\ultrasonic.crf --depend enddevice\ultrasonic.d)
+F (..\Src\ultrasonic.c)(0x5850FF0F)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I..\mbed_lib\XBeeLib -I..\mbed_lib\XBeeLib\DigiLogger -I..\mbed_lib\XBeeLib\FrameBuffer -I..\mbed_lib\XBeeLib\FrameHandlers -I..\mbed_lib\XBeeLib\Frames -I..\mbed_lib\XBeeLib\IO -I..\mbed_lib\XBeeLib\RemoteXBee -I..\mbed_lib\XBeeLib\Utils -I..\mbed_lib\XBeeLib\XBee -I..\mbed_lib\XBeeLib\XBee802 -I..\mbed_lib\XBeeLib\XBeeDM -I..\mbed_lib\XBeeLib\XBeeZB -I..\mbed_lib\mbed -I..\mbed_lib\mbed\TARGET_STM32L4 -I..\mbed_lib\mbed\TARGET_STM32L4\TARGET_NUCLEO_L476RG -I. -IXBeeLib -IXBeeLib/FrameBuffer -IXBeeLib/FrameHandlers -IXBeeLib/Frames -IXBeeLib/IO -IXBeeLib/RemoteXBee -IXBeeLib/Utils -IXBeeLib/XBee -IXBeeLib/XBee802 -IXBeeLib/XBeeDM -IXBeeLib/XBeeZB -IXBeeLib/DigiLogger -Imbed/ -Imbed/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4 -Imbed/TARGET_NUCLEO_L476RG/TARGET_STM/TARGET_STM32L4/TARGET_NUCLEO_L476RG -Imbed/TARGET_NUCLEO_L476RG/TOOLCHAIN_ARM_STD --C99-I "D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\1.0.0\Device\Include-D__UVISION_VERSION="516" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o enddevice\ultrasonic.o --omf_browse enddevice\ultrasonic.crf --depend enddevice\ultrasonic.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x583009A9)
-I (../Inc/stm32l4xx_hal_conf.h)(0x58433B0C)
-I (../Inc/main.h)(0x584C5DA0)
+I (../Inc/stm32l4xx_hal_conf.h)(0x584FA6F8)
+I (../Inc/main.h)(0x584FA6F9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x583009A9)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x583009A8)
@@ -1794,5 +1799,5 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x583009A9)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x583009A9)
-I (..\Src\ultrasonic.h)(0x58434232)
-I (..\Src\am2302.h)(0x583BE518)
+I (..\Src\ultrasonic.h)(0x5850FF0F)
+I (..\Src\util_func.h)(0x5850E21C)

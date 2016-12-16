@@ -14,8 +14,6 @@
 #define DHT22_RCV_TIMING_ERROR2     6 // 
 #define DHT22_RCV_CRC_ERROR				7
 
-#define period_1uS 80
-
 void Reinit_SW_Pin(GPIO_TypeDef* swp_port, uint16_t swp_Pin, uint8_t IO);
 uint8_t read_data_am2302(GPIO_TypeDef* swp_port, uint16_t swp_Pin, uint32_t* data);
 

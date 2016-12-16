@@ -55,8 +55,6 @@ enddevice\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 enddevice\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 enddevice\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 enddevice\main.o: ../Src/aqua_tasks.h
-enddevice\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
-enddevice\main.o: ../Drivers/CMSIS/Include/core_cmFunc.h
 enddevice\main.o: ../Src/printf_mod.h
 enddevice\main.o: ../Src/am2302.h
 enddevice\main.o: ../Inc/stm32l4xx_it.h
