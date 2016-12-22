@@ -26,12 +26,14 @@
 #define SRC_ADDR_64 4
 #define SRC_ADDR_16 12
 #define RF_DATA 15
+#define MODEM_STATUS_VAL 4
 
 //Frame type definitions
 #define TX_REQ 0x10
 #define TX_STAT 0x8B
 #define RX_PACKET 0x90
 #define MODEM_STATUS 0x8A
+
 
 //Flag definitions
 #define TX_OK 0x01

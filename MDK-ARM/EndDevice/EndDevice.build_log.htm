@@ -22,11 +22,41 @@ Dialog DLL:      TCM.DLL V1.14.5.0
  
 <h2>Project:</h2>
 D:\Guiller files\ELEX FILES\GM Electronics Projects\FARMING101\EndDeviceL476\EndDevice\MDK-ARM\EndDevice.uvprojx
-Project File Date:  12/12/2016
+Project File Date:  12/18/2016
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 (build 20)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'EndDevice'
+compiling aqua_tasks.c...
+..\Src\aqua_tasks.h(8): warning:  #1-D: last line of file ends without a newline
+  void feed_fish(void * pvParameters);
+..\Src\util_func.h(25): warning:  #1-D: last line of file ends without a newline
+  void set_RTC_alarm_DEBUG(void);
+..\Src\water_pump.h(8): warning:  #1-D: last line of file ends without a newline
+  void pump_switch (GPIO_TypeDef* pump_port, uint16_t pump_pin, uint8_t state);
+..\Src\aqua_tasks.c(161): warning:  #177-D: variable "buf" was declared but never referenced
+        uint8_t count, buf;
+..\Src\aqua_tasks.c(225): warning:  #177-D: variable "buf" was declared but never referenced
+        uint8_t count, buf;
+..\Src\aqua_tasks.c: 5 warnings, 0 errors
+compiling util_func.c...
+..\Src\util_func.h(25): warning:  #1-D: last line of file ends without a newline
+  void set_RTC_alarm_DEBUG(void);
+..\Src\util_func.c(25): warning:  #177-D: variable "value" was declared but never referenced
+        uint8_t value[3] = {0};
+..\Src\util_func.c(135): warning:  #223-D: function "memset" declared implicitly
+                                        memset(debug_rx_buf, 0, sizeof(debug_rx_buf));
+..\Src\util_func.c(42): warning:  #177-D: variable "alarm" was declared but never referenced
+          RTC_AlarmTypeDef alarm;
+..\Src\util_func.c(142): warning:  #177-D: variable "buf" was declared but never referenced
+                uint8_t buf;
+..\Src\util_func.c(143): warning:  #177-D: variable "value" was declared but never referenced
+                uint32_t value;
+..\Src\util_func.c(179): warning:  #177-D: variable "buf" was declared but never referenced
+                uint8_t buf;
+..\Src\util_func.c(180): warning:  #177-D: variable "value" was declared but never referenced
+                uint32_t value;
+..\Src\util_func.c: 8 warnings, 0 errors
 compiling garden_tasks.c...
 ..\Src\water_pump.h(8): warning:  #1-D: last line of file ends without a newline
   void pump_switch (GPIO_TypeDef* pump_port, uint16_t pump_pin, uint8_t state);
@@ -35,7 +65,7 @@ compiling garden_tasks.c...
 ..\Src\util_func.h(25): warning:  #1-D: last line of file ends without a newline
   void set_RTC_alarm_DEBUG(void);
 ..\Src\soil_moisture.h(5): warning:  #1-D: last line of file ends without a newline
-  uint32_t read_soil_moisture(ADC_HandleTypeDef hadc, uint32_t ADC_channel, uint8_t samples);
+  uint32_t read_soil_moisture(ADC_HandleTypeDef* hadc, uint32_t ADC_channel, uint8_t samples);
 ..\Src\garden_tasks.c(281): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *"
                                         xbee_tx_packet_update(&value[1], 2);
 ..\Src\garden_tasks.c(285): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *"
@@ -56,9 +86,9 @@ compiling garden_tasks.c...
         uint8_t data_val = 0;
 ..\Src\garden_tasks.c: 13 warnings, 0 errors
 linking...
-Program Size: Code=41628 RO-data=616 RW-data=256 ZI-data=26528  
+Program Size: Code=42384 RO-data=616 RW-data=268 ZI-data=34524  
 FromELF: creating hex file...
-"EndDevice\EndDevice.axf" - 0 Error(s), 13 Warning(s).
+"EndDevice\EndDevice.axf" - 0 Error(s), 26 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -76,7 +106,7 @@ Package Vendor: ARM
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:4.3.0
-Build Time Elapsed:  00:01:05
+Build Time Elapsed:  00:00:57
 </pre>
 </body>
 </html>

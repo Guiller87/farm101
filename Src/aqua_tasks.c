@@ -15,10 +15,12 @@ extern uint32_t sys_stat;
 extern uint8_t xbee_flag;
 extern uint8_t base_stn_dest_addr[];
 extern UART_HandleTypeDef huart5;
+extern TIM_HandleTypeDef htim4;
 
 extern QueueHandle_t xQueue_water_towers;
 extern QueueHandle_t xQueue_check_fish_food;
 extern QueueHandle_t xQueue_check_fish_tank_level;
+extern QueueHandle_t xQueue_feed_fish;
 
 extern SemaphoreHandle_t xSemaphore_send_log;
 extern SemaphoreHandle_t xSemaphore_timer2;
@@ -169,8 +171,8 @@ void check_fish_food(void * pvParameters)
 			if(xSemaphoreTake(xSemaphore_timer2, 1000))
 			{			
 				vTaskSuspendAll();
-				ret_val = measure_distance(GARDEN_TANK_LEVEL_TRIG_GPIO_Port, GARDEN_TANK_LEVEL_TRIG_Pin, 
-																	 GARDEN_TANK_LEVEL_ECHO_GPIO_Port, GARDEN_TANK_LEVEL_ECHO_Pin);
+				ret_val = measure_distance(AQUA_FISH_FOOD_LEVEL_TRGI_GPIO_Port, AQUA_FISH_FOOD_LEVEL_TRGI_Pin, 
+																	 AQUA_FISH_FOOD_LEVEL_ECHO_GPIO_Port, AQUA_FISH_FOOD_LEVEL_ECHO_Pin);
 				xTaskResumeAll();
 				
 				xSemaphoreGive(xSemaphore_timer2);
@@ -233,8 +235,8 @@ void check_fish_tank_level(void * pvParameters)
 			if(xSemaphoreTake(xSemaphore_timer2, 1000))
 			{			
 				vTaskSuspendAll();
-				ret_val = measure_distance(GARDEN_TANK_LEVEL_TRIG_GPIO_Port, GARDEN_TANK_LEVEL_TRIG_Pin, 
-																	 GARDEN_TANK_LEVEL_ECHO_GPIO_Port, GARDEN_TANK_LEVEL_ECHO_Pin);
+				ret_val = measure_distance(AQUA_FISH_TANK_LEVEL_TRIG_GPIO_Port, AQUA_FISH_TANK_LEVEL_TRIG_Pin, 
+																	 AQUA_FISH_TANK_LEVEL_ECHO_GPIO_Port, AQUA_FISH_TANK_LEVEL_ECHO_Pin);
 				xTaskResumeAll();
 				
 				xSemaphoreGive(xSemaphore_timer2);
@@ -279,6 +281,71 @@ void check_fish_tank_level(void * pvParameters)
 			
 			sys_stat &= (~SYS_STAT_AQUA_CHECKING_FISH_TANK);
 		}
+	}
+}
+
+void feed_fish(void * pvParameters)
+{	
+	uint8_t buf;
+	uint32_t ret_val, count;
+	TIM_OC_InitTypeDef sConfigOC;
+	
+	while(1) 
+	{
+		if(xQueueReceive(xQueue_feed_fish, &ret_val, 1000))
+		{	
+			for(ret_val = 0x7D0; ret_val < 0x1388; (ret_val += 16))
+			{
+				sConfigOC.Pulse = ret_val; //
+				sConfigOC.OCMode = TIM_OCMODE_PWM1;
+				sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+				sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+				
+				HAL_TIM_Base_Stop(&htim4);
+				HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
+				
+				HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_3);
+				
+				HAL_TIM_Base_Start(&htim4);
+				HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
+				HAL_Delay(10);
+			}
+			
+			for(ret_val = 0x1388; ret_val > 0x7D0; ret_val -= 16)
+			{
+				sConfigOC.Pulse = ret_val; //
+				sConfigOC.OCMode = TIM_OCMODE_PWM1;
+				sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+				sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+				
+				HAL_TIM_Base_Stop(&htim4);
+				HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
+				
+				HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_3);
+				
+				HAL_TIM_Base_Start(&htim4);
+				HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
+				HAL_Delay(10);
+			}
+			
+			if(xSemaphoreTake(xSemaphore_send_log, 10000))
+			{
+				printf("AQUA Done Feeding fish!\r\n");
+
+				for(count = 0; count < MAX_RETRY; count++)
+				{
+						xbee_tx(&huart5, &base_stn_dest_addr[0] , "AQUA Done Feeding fish!", 24, &buf, 0);
+						vTaskDelay(MAX_WAIT_FOR_RESP / portTICK_PERIOD_MS );
+						if(xbee_flag & TX_OK) 
+						{
+							xbee_flag &= (~TX_OK);
+							break;
+						}
+				}
+
+				xSemaphoreGive(xSemaphore_send_log);
+			}	
+		}			
 	}
 }
 

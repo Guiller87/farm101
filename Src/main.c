@@ -104,7 +104,6 @@ TaskHandle_t debug_parse_data_rx_handle = NULL;
 TaskHandle_t manage_garden_handle = NULL;
 TaskHandle_t water_garden_handle = NULL;
 TaskHandle_t check_flow_meters_handle = NULL;
-TaskHandle_t test_task_handle = NULL;
 TaskHandle_t read_temp_humid_handle = NULL;
 TaskHandle_t read_soil_moisture_handle = NULL;
 TaskHandle_t read_garden_tank_level_handle = NULL;
@@ -113,6 +112,8 @@ TaskHandle_t status_led_handle = NULL;
 TaskHandle_t water_towers_handle = NULL;
 TaskHandle_t check_fish_food_handle = NULL;
 TaskHandle_t check_fish_tank_level_handle = NULL;
+TaskHandle_t test_task_handle = NULL;
+TaskHandle_t feed_fish_handle = NULL;
 
 QueueHandle_t xQueue_debug_parse_data_rx = NULL;
 QueueHandle_t xQueue_rtc_alarm = NULL;
@@ -125,10 +126,13 @@ QueueHandle_t xQueue_read_garden_tank_level = NULL;
 QueueHandle_t xQueue_water_towers = NULL;
 QueueHandle_t xQueue_check_fish_food = NULL;
 QueueHandle_t xQueue_check_fish_tank_level = NULL;
-
+QueueHandle_t xQueue_test_task = NULL;
+QueueHandle_t xQueue_feed_fish = NULL;
 
 SemaphoreHandle_t xSemaphore_send_log = NULL;
 SemaphoreHandle_t xSemaphore_timer2 = NULL;
+
+
 
 //TimerHandle_t xTimers_set_RTC;
 
@@ -255,8 +259,10 @@ int main(void)
 	ret_val = xTaskCreate(water_towers, "water_towers", ((uint16_t)512), &sys_stat, 1, &water_towers_handle); 
 	ret_val = xTaskCreate(check_fish_food, "check_fish_food", ((uint16_t)512), &sys_stat, 1, &check_fish_food_handle); 
 	ret_val = xTaskCreate(check_fish_tank_level, "check_fish_tank_level", ((uint16_t)512), &sys_stat, 1, &check_fish_tank_level_handle); 
+	ret_val = xTaskCreate(feed_fish, "feed_fish", configMINIMAL_STACK_SIZE, &sys_stat, 1, &feed_fish_handle); 
 
-  //ret_val = xTaskCreate(test_task, "test", ((uint16_t)512), &sys_stat, 1, &test_task_handle); 
+
+  //ret_val = xTaskCreate(test_task, "test", ((uint16_t)1024), &sys_stat, 1, &test_task_handle); 
 	  
   /* USER CODE END RTOS_THREADS */
 
@@ -273,12 +279,13 @@ int main(void)
 	xQueue_water_towers =  xQueueCreate( 1, 1);	
   xQueue_check_fish_food =  xQueueCreate( 1, 1);	
 	xQueue_check_fish_tank_level =  xQueueCreate( 1, 1);	
+	xQueue_feed_fish =  xQueueCreate( 1, 1);
+  xQueue_test_task =  xQueueCreate( 1, 1);
 	
 	sys_stat = SYS_STAT_IDLE;
 	initialize_system();
 
 	printf("Starting OS Kernel..\r\n");
-		
   /* USER CODE END RTOS_QUEUES */
  
 
@@ -512,6 +519,7 @@ static void MX_I2C3_Init(void)
 
 }
 
+
 /* SPI1 init function */
 static void MX_SPI1_Init(void)
 {
@@ -577,9 +585,9 @@ static void MX_TIM4_Init(void)
   TIM_OC_InitTypeDef sConfigOC;
 
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 0;
+  htim4.Init.Prescaler = 40;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim4.Init.Period = 0;
+  htim4.Init.Period = 0x9C40;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   if (HAL_TIM_PWM_Init(&htim4) != HAL_OK)
   {
@@ -594,7 +602,7 @@ static void MX_TIM4_Init(void)
   }
 
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;
+  sConfigOC.Pulse = 0xB29;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_3) != HAL_OK)

@@ -320,7 +320,7 @@ void status_led_task ( void * pvParameters )
 				HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
 				vTaskDelay(100 / portTICK_PERIOD_MS );
 				HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
-				vTaskDelay(2000 / portTICK_PERIOD_MS );
+				vTaskDelay(3000 / portTICK_PERIOD_MS );
 				break;
 
 			default:

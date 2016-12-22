@@ -351,10 +351,10 @@ void get_soil_moisture(void * pvParameters)
 		{	
 			sys_stat |= SYS_STAT_GARDEN_CHECKING_SOIL_MOISTURE;	
 			
-			ret_val1 = read_soil_moisture(hadc1, ADC_CHANNEL_6, 8);
-			ret_val2 = read_soil_moisture(hadc1, ADC_CHANNEL_13, 8);
-			ret_val3 = read_soil_moisture(hadc1, ADC_CHANNEL_12, 8);
-			ret_val4 = read_soil_moisture(hadc1, ADC_CHANNEL_9, 8);
+			ret_val1 = read_soil_moisture(&hadc1, ADC_CHANNEL_6, 8);
+			ret_val2 = read_soil_moisture(&hadc1, ADC_CHANNEL_13, 8);
+			ret_val3 = read_soil_moisture(&hadc1, ADC_CHANNEL_12, 8);
+			ret_val4 = read_soil_moisture(&hadc1, ADC_CHANNEL_9, 8);
 		    
 			ret_val1 /= 10;
 			ret_val2 /= 10;
@@ -428,7 +428,7 @@ void read_garden_tank_level(void * pvParameters)
 
 					for(count = 0; count < MAX_RETRY; count++)
 					{
-							xbee_tx(&huart5, &base_stn_dest_addr[0] , "GARDEN tank water level reading failed", 38, &value[0], 0);
+							xbee_tx(&huart5, &base_stn_dest_addr[0] , "GARDEN tank water level reading failed\r\n", 38, &value[0], 0);
 							vTaskDelay(MAX_WAIT_FOR_RESP / portTICK_PERIOD_MS );
 							if(xbee_flag & TX_OK) 
 							{

@@ -10,11 +10,14 @@
 #include "soil_moisture.h"
 #include "xbee_test.h"
 #include "ultrasonic.h"
+#include "servo_test.h"
 
 extern uint8_t xbee_flag;
 extern uint8_t sys_stat;
 
 extern UART_HandleTypeDef huart5;
+extern TIM_HandleTypeDef htim4;
+extern QueueHandle_t xQueue_test_task;
 
 extern QueueHandle_t xQueue_rtc_alarm;
 extern QueueHandle_t xQueue_water_garden;
@@ -25,6 +28,7 @@ extern QueueHandle_t xQueue_read_garden_tank_level;
 extern QueueHandle_t xQueue_water_towers;
 extern QueueHandle_t xQueue_check_fish_food;
 extern QueueHandle_t xQueue_check_fish_tank_level;
+extern QueueHandle_t xQueue_feed_fish;
 
 extern RTC_HandleTypeDef hrtc;
 extern ADC_HandleTypeDef hadc1;
@@ -111,6 +115,16 @@ void manage_garden( void * pvParameters )
 				xQueueSend(xQueue_check_fish_tank_level, &buf, 1000);
 			}
 			/********check fish tank level end******************/					
+
+			/********feed fish start ******************/ //3 times a day
+			// use else if with flow meters checking. they are not to be done at the same time.
+			if( ((time.Hours == AQUA_FEED_FISH_HOUR_1) && (time.Minutes == AQUA_FEED_FISH_MIN_1)) ||  //9AM
+					((time.Hours == AQUA_FEED_FISH_HOUR_2) && (time.Minutes == AQUA_FEED_FISH_MIN_2)) ||  //5PM
+					((time.Hours == AQUA_FEED_FISH_HOUR_3) && (time.Minutes == AQUA_FEED_FISH_MIN_3)) )     //1AM
+			{
+			  xQueueSend(xQueue_feed_fish, &buf, 1000);
+			}
+			/********feed fish end******************/
 			
       //common tasks
 			/********flow meters checking start ******************/	 //every 10 mins
@@ -146,6 +160,7 @@ void initialize_system (void)
 	set_RTC_alarm(1);
 	pump_switch(GARDEN_PUMP_GPIO_Port, GARDEN_PUMP_Pin, OFF);
 	pump_switch(AQUA_PUMP_FISH_TANK_GPIO_Port, AQUA_PUMP_FISH_TANK_Pin, ON);	
+	HAL_GPIO_WritePin(XBEE_RESET_GPIO_Port, XBEE_RESET_Pin, GPIO_PIN_SET);	
 }
 
 
@@ -153,7 +168,7 @@ void initialize_system (void)
 //test task only. do not run in final
 void test_task(void * pvParameters)
 {
-	uint32_t ret_val = 0;
+	uint32_t ret_val, ret_val1, ret_val2, ret_val3, ret_val4 = 0;
 	uint32_t data = 0;
 	uint16_t humidity = 0;
 	uint16_t temperature = 0;	
@@ -162,15 +177,6 @@ void test_task(void * pvParameters)
 	uint8_t xbee_tx_buf[95] = {0x7E, 0x00, 0x5B, 0x10, 0x01, 0x00, 0x13, 0xA2, 0x00, 0x40, 0xE7, 0xCB, 0x9A, 0xFF, 0xFE, 0x00, 0x00, 0x74, 0x65, 0x73, 0x74, 0x20, 0x6C, 0x6F, 0x6E, 0x67, 0x20, 0x6D, 0x65, 0x73, 0x73, 0x61, 
 															 0x67, 0x65, 0x20, 0x66, 0x72, 0x6F, 0x6D, 0x20, 0x45, 0x44, 0x2E, 0x20, 0x66, 0x61, 0x72, 0x6D, 0x69, 0x6E, 0x67, 0x20, 0x31, 0x30, 0x31, 0x20, 0x69, 0x73, 0x20, 0x69, 0x6E, 0x20, 0x64, 0x65,
 															 0x76, 0x65, 0x6C, 0x70, 0x6D, 0x65, 0x6E, 0x74, 0x2E, 0x20, 0x74, 0x65, 0x73, 0x74, 0x69, 0x6E, 0x67, 0x20, 0x78, 0x62, 0x65, 0x65, 0x20, 0x6D, 0x6F, 0x64, 0x75, 0x6C, 0x65, 0x21, 0x9C};
-	uint8_t dest_addr[8];
-	dest_addr[0] = 0x00;
-	dest_addr[1] = 0x13;
-	dest_addr[2] = 0xA2;
-	dest_addr[3] = 0x00;
-	dest_addr[4] = 0x40;
-	dest_addr[5] = 0xE7;
-	dest_addr[6] = 0xCB;
-	dest_addr[7] = 0x9A;		
 
 	uint8_t test_data[5];
 
@@ -179,65 +185,118 @@ void test_task(void * pvParameters)
 	test_data[2] = 0x6F;
 	test_data[3] = 0x30;
 
-		
+	TIM_OC_InitTypeDef sConfigOC;
+	
+	float unit_per_deg;
+	
+
+  //sConfigOC.Pulse = 0x1388; //2.5ms
+		 sConfigOC.Pulse = 0x7D0; //
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+	
+	HAL_TIM_Base_Stop(&htim4);
+	HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
+	
+  HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_3);
+	
+	HAL_TIM_Base_Start(&htim4);
+	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
+	
 	while(1)
 	{
+	//	if(xQueueReceive(xQueue_test_task, &buf, 1000))
+//		{		
 		
-//			vTaskSuspendAll();
-//			ret_val = measure_distance(GARDEN_TANK_LEVEL_TRIG_GPIO_Port, GARDEN_TANK_LEVEL_TRIG_Pin, 
-//																 GARDEN_TANK_LEVEL_ECHO_GPIO_Port, GARDEN_TANK_LEVEL_ECHO_Pin);
-//			xTaskResumeAll();
+			//test pumps and flow meters
+//			pump_switch(GARDEN_PUMP_GPIO_Port, GARDEN_PUMP_Pin, OFF);
+//			HAL_Delay(200);
+//			start_flow_rate(GARDEN_PUMP_FLOW_METER_Pin);
+//			pump_switch(GARDEN_PUMP_GPIO_Port, GARDEN_PUMP_Pin, ON);
+//			HAL_Delay(2000);
+//			ret_val = read_flow_rate(GARDEN_PUMP_FLOW_METER_Pin);			
+//			pump_switch(GARDEN_PUMP_GPIO_Port, GARDEN_PUMP_Pin, OFF);			
+//			printf("GARDEN Flow meter reading = %d\r\n", ret_val);
+//			
+//			pump_switch(AQUA_PUMP_TOWER_GPIO_Port, AQUA_PUMP_TOWER_Pin, OFF);			
+//			HAL_Delay(200);
+//			start_flow_rate(AQUA_PUMP_TOWER_FLOW_METER_Pin);
+//			pump_switch(AQUA_PUMP_TOWER_GPIO_Port, AQUA_PUMP_TOWER_Pin, ON);
+//			HAL_Delay(2000);
+//			ret_val = read_flow_rate(AQUA_PUMP_TOWER_FLOW_METER_Pin);			
+//			pump_switch(AQUA_PUMP_TOWER_GPIO_Port, AQUA_PUMP_TOWER_Pin, OFF);
+//			printf("AQUA_PUMP_TOWER meter reading = %d\r\n", ret_val);
 
-//			if(xSemaphoreTake(xSemaphore_send_log, 5000))
-//			{
-//				if(ret_val == DISTANCE_ERROR)
-//				{
-//					printf("AQUA Fish tank level check failed\r\n");
-//				}
-//				else
-//				{
-//					printf("AQUA Fish tank level = %d cm\r\n", ret_val);
-//				}
-//				xSemaphoreGive(xSemaphore_send_log);
-//			}		
-				//xQueueSend(xQueue_read_temp_humid, &buf, 1000);
-		xQueueSend(xQueue_read_soil_moisture, &buf, 1000);
-			vTaskDelay(3000 / portTICK_PERIOD_MS );
-		
-//		HAL_GPIO_TogglePin(GARDEN_TANK_LEVEL_TRIG_GPIO_Port, GARDEN_TANK_LEVEL_TRIG_Pin);
-//		timer_delay_uS(80000);
-//			
-		    //HAL_UART_Transmit(&huart5, xbee_tx_buf, 95, 1000);
-//		for( data=0; data < 10; data++){
-//			print_timestamp();
-//			xbee_send_timestamp();
-//			vTaskDelay(3000 / portTICK_PERIOD_MS );
+//			pump_switch(AQUA_PUMP_FISH_TANK_GPIO_Port, AQUA_PUMP_FISH_TANK_Pin, OFF);			
+//			HAL_Delay(200);
+//			start_flow_rate(AQUA_PUMP_FISH_TANK_FLOW_METER_Pin);
+//			pump_switch(AQUA_PUMP_FISH_TANK_GPIO_Port, AQUA_PUMP_FISH_TANK_Pin, ON);
+//			HAL_Delay(2000);
+//			ret_val = read_flow_rate(AQUA_PUMP_FISH_TANK_FLOW_METER_Pin);			
+//			pump_switch(AQUA_PUMP_FISH_TANK_GPIO_Port, AQUA_PUMP_FISH_TANK_Pin, OFF);
+//			printf("AQUA_PUMP_FISH_TANK meter reading = %d\r\n", ret_val);
+				
+//			ret_val1 = read_soil_moisture(&hadc1, ADC_CHANNEL_6, 4);
+//			ret_val2 = read_soil_moisture(&hadc1, ADC_CHANNEL_13, 4);
+//			ret_val3 = read_soil_moisture(&hadc1, ADC_CHANNEL_12, 4);
+//			ret_val4 = read_soil_moisture(&hadc1, ADC_CHANNEL_9, 4);
+//			ret_val1 /= 10;
+//			ret_val2 /= 10;
+//			ret_val3 /= 10;
+//			ret_val4 /= 10;
+//			printf("Soil moisture reading: Sensor 1 = %d, Sensor 2 = %d, Sensor 3 = %d, Sensor 4 = %d \r\n", ret_val1, ret_val2, ret_val3, ret_val4);
+//							
+
+//				ret_val = measure_distance(GARDEN_TANK_LEVEL_TRIG_GPIO_Port, GARDEN_TANK_LEVEL_TRIG_Pin, 
+//																	 GARDEN_TANK_LEVEL_ECHO_GPIO_Port, GARDEN_TANK_LEVEL_ECHO_Pin);
+//				printf("GARDEN tank water level = %d cm\r\n", ret_val);
+//        HAL_Delay(2000);
+//				ret_val = measure_distance(AQUA_FISH_TANK_LEVEL_TRIG_GPIO_Port, AQUA_FISH_TANK_LEVEL_TRIG_Pin, 
+//																	 AQUA_FISH_TANK_LEVEL_ECHO_GPIO_Port, AQUA_FISH_TANK_LEVEL_ECHO_Pin);
+//        printf("AQUA Fish tank level = %d cm\r\n", ret_val);
+//        HAL_Delay(2000);
+//				ret_val = measure_distance(AQUA_FISH_FOOD_LEVEL_TRGI_GPIO_Port, AQUA_FISH_FOOD_LEVEL_TRGI_Pin, 
+//																	 AQUA_FISH_FOOD_LEVEL_ECHO_GPIO_Port, AQUA_FISH_FOOD_LEVEL_ECHO_Pin);
+//        printf("AQUA Fish food level = %d cm\r\n", ret_val);
+//        HAL_Delay(2000);
+
+
+			for(ret_val = 0x7D0; ret_val < 0x1388; (ret_val += 16))
+			{
+				sConfigOC.Pulse = ret_val; //
+				sConfigOC.OCMode = TIM_OCMODE_PWM1;
+				sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+				sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+				
+				HAL_TIM_Base_Stop(&htim4);
+				HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
+				
+				HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_3);
+				
+				HAL_TIM_Base_Start(&htim4);
+				HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
+				HAL_Delay(10);
+			}
+			
+			for(ret_val = 0x1388; ret_val > 0x7D0; ret_val -= 16)
+			{
+				sConfigOC.Pulse = ret_val; //
+				sConfigOC.OCMode = TIM_OCMODE_PWM1;
+				sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+				sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+				
+				HAL_TIM_Base_Stop(&htim4);
+				HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
+				
+				HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_3);
+				
+				HAL_TIM_Base_Start(&htim4);
+				HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
+				HAL_Delay(10);
+			} 
+
 //		}
-//						if(xSemaphoreTake(xSemaphore_send_log, 5000))
-//						{
-//								printf("start");
-//								xSemaphoreGive(xSemaphore_send_log);
-//						}						
-//			
-//					  //check aqua towers watering status
-//						start_flow_rate(GARDEN_PUMP_FLOW_METER_Pin);
-//						vTaskDelay(10000 / portTICK_PERIOD_MS );  //monitor for 10 seconds
-//						ret_val = read_flow_rate(GARDEN_PUMP_FLOW_METER_Pin);
-//						//update status
-//						if(xSemaphoreTake(xSemaphore_send_log, 5000))
-//						{
-//								printf("Aqua towers flow meter reading = %d\r\n", ret_val);
-//								xSemaphoreGive(xSemaphore_send_log);
-//						}			
-//						chan = ADC_CHANNEL_6;
-//						//ret_val = read_soil_moisture(hadc1, chan);
-//						if(xSemaphoreTake(xSemaphore_send_log, 5000))
-//						{
-//								printf("ADC Channel%d = %d\r\n", chan,ret_val );
-//								xSemaphoreGive(xSemaphore_send_log);
-//						}		
-//		xQueueSend(xQueue_read_garden_tank_level, &buf, 1000);
-//		vTaskDelay(3000 / portTICK_PERIOD_MS );
-	} 
+  }
 }
 

@@ -133,8 +133,8 @@ void xbee_rx_task(void * pvParameters)
 					{
 						if(xSemaphoreTake(xSemaphore_send_log, 100))
 						{
-							printf("XBEE Modem Status Received");
-							HAL_UART_Transmit(&huart2, &xbee_rx[RF_DATA], (data_lenght - (SRC_ADDR_16 + 1)), 1000);
+							printf("XBEE Modem Status Received: %d", xbee_rx[MODEM_STATUS_VAL]);
+							//HAL_UART_Transmit(&huart2, &xbee_rx[MODEM_STATUS_VAL], 1, 1000);
 							printf("\r\n");
 							xSemaphoreGive(xSemaphore_send_log);
 						}
